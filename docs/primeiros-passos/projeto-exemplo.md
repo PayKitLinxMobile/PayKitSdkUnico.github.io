@@ -9,4 +9,4 @@ Para tal, disponiblizamos uma App de Exemplo com flavors específica adquirente.
 
 | SDK         | Versão SDK Único     | Link                             |
 | ------------------- | ---------------------| ------------------------------------ |
-| `Aplicativo Demo`   | 1.1.1                | [Download](https://paykitlinxmobile.github.io/assets/demo/SDKPayServicesDemoApp.zip) |
+| `Aplicativo Demo`   | 1.1.1                | [Download](https://paykitlinxmobile.github.io/PayKitSdkUnico.github.io/assets/demo/SDKPayServicesDemoApp.zip) |
