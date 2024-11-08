@@ -15,16 +15,16 @@ O SDK Único atualmente oferece suporte para as seguintes operações.
 
 A seguinte tabela resume as operações disponíveis para cada SDK de adquirente integrado ao SDK Único.
 
-| Operação   |TEF|Stone|REDE|PagSeguro| GetNet | Cielo | SafraPay | Banrisul |
+| Operação   |TEF|Stone|REDE|PagSeguro| GetNet | Cielo | Adyen | Vero |
 |------------|----|---|------|--|---|----|-----|----|
-| Ativar     | ✔️ | ✔️ | ✔️ | ✔️ |    |  | |  |  
-| Crédito    | ✔️ | ✔️ | ✔️ | ✔️ |    |  | |  |
-| Débito     | ✔️ | ✔️ | ✔️ | ✔️ |    |  | |  |
-| Voucher    | ✔️ | ✔️ | ✔️ | ❌ |    |  | |  |
-| PIX        | ✔️ | ✔️ | ❌ | ✔️ |   |  | |  |
-| Cancelar   | ✔️ | ✔️ | ✔️ | ✔️ |   |  | |  |
-| Reversão   | ✔️ | ✔️ | ✔️ | ❌ |   |  | |  |
-| Reimprimir | ✔️ | ✔️ | ✔️ | ❌ |   |  | |  |
+| Ativar     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |  
+| Crédito    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️  | ✔️ |
+| Débito     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Voucher    | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
+| PIX        | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Cancelar   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Reversão   | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Reimprimir | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
 
 - "✔️" indica que a operação é suportada pelo SDK.
 - "❌" indica que a operação não é suportada pelo SDK.
@@ -38,15 +38,12 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 
 - Stone
 - Linx Tef
-
-## Adquirentes Em Desenvolvimento
-
 - Rede
-- Pag Seguro
-- Get Net
+- GetNet
 - Cielo
-- Safra Pay
-- Banrisul Vero
+- PagSeguro
+- Adyen
+- Vero
 
 
 ## Dispositivos Suportados
