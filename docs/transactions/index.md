@@ -1,6 +1,6 @@
 # Transações
 
-"O SDK Único é uma biblioteca do PayKit, exclusiva para Android, responsável pela integração de pagamentos. 
+O SDK Único é uma biblioteca do PayKit, exclusiva para Android, responsável pela integração de pagamentos. 
 Pode ser utilizado em terminais de pagamento para diversos tipos de transações e funções. 
 Este documento tem como objetivo explicar e demonstrar como utilizar a biblioteca paykit-sdk-unico para realizar operações como pagamentos, estornos e reimpressões em uma aplicação Android.
 

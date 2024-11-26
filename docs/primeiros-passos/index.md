@@ -53,3 +53,4 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 - Positivo L300
 - Gertec GPOS 700X
 - Gertec GPOS 700
+- Ingenico DX8000

@@ -1,5 +1,5 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de *Reimpressão*, utilize o exemplo abaixo. Ela realizará o desfazimento da última transação.
+Para realizar uma Transação de *Reimpressão*, utilize o exemplo abaixo.
 
 
 ```kotlin
