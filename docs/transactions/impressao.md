@@ -1,5 +1,5 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de *Reimpressão*, utilize o exemplo abaixo.
+Para realizar uma Transação de *Impressão*, utilize o exemplo abaixo.
 
 
 ```kotlin
@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Reimpressão"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Impressão"))
 
-        val receiptType = ReceiptType.MERCHANT // Imprimir comprovante Estabelecimento
+        val bitmap: Bitmap // Bitmap para impressão
 
-        paykit.printLastReceipt(receiptType, object : Callback<Boolean> {
+        paykit.print(bitmap, object : Callback<Boolean> {
             override fun execute(result: Boolean) {
                 Log.i("PaymentResult", "Status: ${result}")
                 onPaymentResult(result)

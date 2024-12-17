@@ -1,5 +1,10 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de *Crédito à vista*, utilize o exemplo abaixo.
+Para realizar uma Transação de **Crédito à vista**, utilize o exemplo abaixo.
+
+!!! Atenção 
+
+    Verifique os parametros da transação. Os atributos devem seguir os critérios: <br/>
+    - **amount**: MAIOR ou igual a 1
 
 ```kotlin
 import android.os.Bundle
@@ -10,6 +15,7 @@ import com.linx.paykit.common.Paykit
 import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.PaymentParameters
+import com.linx.paykit.common.parameter.type.CreditTransactionType
 import com.linx.paykit.core.PaykitFactory
 import java.math.BigDecimal
 
@@ -25,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         paykit = PaykitFactory().build(Parameters(this.applicationContext, "Credito à Vista"))
 
-        val creditParameter = PaymentParameters(
+        val creditParameter = CreditParameters(
             installments = 1,  // Número de parcelas (1 para crédito à vista)
             amount = BigDecimal("100.00"),  // Valor da transação
-            automaticConfirmation = true  // Confirmação automática
+            creditType =  CreditTransactionType.AT_SIGHT // Crédito à vista
         )
 
         paykit.credit(creditParameter, object : Callback<PaymentResult> {
@@ -44,3 +50,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+
+{% include "../snippets/credit-type.md" %}
+{% include "../snippets/payment-result.md" %}

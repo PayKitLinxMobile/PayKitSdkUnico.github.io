@@ -51,6 +51,7 @@ theme:
 
 plugins:
   - blog
+  - include-markdown
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
@@ -120,8 +121,11 @@ nav:
     - Débito: transactions/debito.md
     - Voucher: transactions/voucher.md
     - Pix: transactions/pix.md
-    - Estorno: transactions/estorno.md
+    - Wallet: transactions/wallet.md
+    - Cancelamento: transactions/cancelamento.md
+    # - Estorno: transactions/estorno.md
     - Reimpressão: transactions/reimpressao.md
+    - Impressão: transactions/impressao.md
   - O que há de novo?:
     - SDK Único:     
       - releases/index.md
