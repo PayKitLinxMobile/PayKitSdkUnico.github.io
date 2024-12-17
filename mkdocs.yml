@@ -51,6 +51,7 @@ theme:
 
 plugins:
   - blog
+  - include-markdown
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
@@ -115,13 +116,17 @@ nav:
     - Desenvolvimento a Primeira Integração: primeiros-passos/integracao.md
   - Transações:
     - transactions/index.md
+    - API SDK Único: transactions/paykit.md
     - Crédito à Vista: transactions/credito-a-vista.md
     - Crédito Parcelado: transactions/credito-parcelado.md
     - Débito: transactions/debito.md
     - Voucher: transactions/voucher.md
     - Pix: transactions/pix.md
-    - Estorno: transactions/estorno.md
+    - Wallet: transactions/wallet.md
+    - Cancelamento: transactions/cancelamento.md
+    # - Estorno: transactions/estorno.md
     - Reimpressão: transactions/reimpressao.md
+    - Impressão: transactions/impressao.md
   - O que há de novo?:
     - SDK Único:     
       - releases/index.md

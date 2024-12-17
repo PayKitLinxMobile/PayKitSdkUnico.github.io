@@ -1,10 +1,10 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de *Voucher*, utilize o exemplo abaixo. 
+Para realizar uma Transação de **Voucher**, utilize o exemplo abaixo. 
 
 !!! Atenção 
 
     Verifique os parametros da transação. Os atributos devem seguir os critérios: <br/>
-    - amount: MAIOR ou igual a 1
+    - **amount**: MAIOR ou igual a 1
 
 ```kotlin
 import android.os.Bundle
@@ -15,6 +15,7 @@ import com.linx.paykit.common.Paykit
 import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.PaymentParameters
+import com.linx.paykit.common.parameter.type.VoucherTransactionType
 import com.linx.paykit.core.PaykitFactory
 import java.math.BigDecimal
 
@@ -26,17 +27,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Transacao de Debito"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Voucher"))
 
-        val debitParameter = PaymentParameters(
+        val voucherParameter = VoucherParameters(
             amount = BigDecimal("100.00"),  // Valor da transação
-            automaticConfirmation = true  // Confirmação automática
+            voucherType = VoucherTransactionType.FOOD // Tipo de transação de Voucher
         )
 
-        paykit.credit(debitParameter, object : Callback<PaymentResult> {
+        paykit.voucher(voucherParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.transactionId}, Transaction: ${result.transaction}")
-                onPaymentResult(result.transactionId, result.transaction)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
+                onPaymentResult(result.id, result.transactionData)
             }
         })
     }
@@ -47,14 +48,10 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-## Explicação do PaymentResult
+!!! Atenção 
 
-No `callBack` da transação, é possível capturar detalhes da adquirente, como detalhado a seguir.
-
- - transactionId: Identificador único da transação (NSU).
- - transaction: Objeto contendo o resultado detalhado da transação da adquirente, útil para deserialização.
- - transactionType: Tipo de processador de pagamento utilizado (STONE, TEF, REDE, GETNET, PAGSEGURO).
- - status: Status da transação.
- - message: Mensagem de sucesso ou erro, se houver.
+    Verifique a modalidade de voucher suportada pela adquirente.<br/>
 
 
+{% include "../snippets/voucher-type.md" %}
+{% include "../snippets/payment-result.md" %}

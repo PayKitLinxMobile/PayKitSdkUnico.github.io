@@ -1,5 +1,5 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de *PIX*, utilize o exemplo abaixo. 
+Para realizar uma Transação de **PIX**, utilize o exemplo abaixo. 
 
 !!! Atenção 
 
@@ -26,17 +26,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Transacao de PIX"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "PIX"))
 
         val pixParameter = PaymentParameters(
             amount = BigDecimal("100.00"),  // Valor da transação
-            automaticConfirmation = true  // Confirmação automática
         )
 
         paykit.pix(pixParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.transactionId}, Transaction: ${result.transaction}")
-                onPaymentResult(result.transactionId, result.transaction)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
+                onPaymentResult(result.id, result.transactionData)
             }
         })
     }
@@ -47,14 +46,4 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-## Explicação do PaymentResult
-
-No `callBack` da transação, é possível capturar detalhes da adquirente, como detalhado a seguir.
-
- - transactionId: Identificador único da transação (NSU).
- - transaction: Objeto contendo o resultado detalhado da transação da adquirente, útil para deserialização.
- - transactionType: Tipo de processador de pagamento utilizado (STONE, TEF, REDE, GETNET, PAGSEGURO).
- - status: Status da transação.
- - message: Mensagem de sucesso ou erro, se houver.
-
-
+{% include "../snippets/payment-result.md" %}
