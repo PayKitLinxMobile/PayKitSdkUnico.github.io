@@ -1,11 +1,10 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de **Crédito parcelado**, utilize o exemplo abaixo. 
+Para realizar uma Transação de **Wallet**, utilize o exemplo abaixo. 
 
 !!! Atenção 
 
-    Verifique os parametros da transação. Os atributos devem seguir os critérios:<br/>
-    - **installments**: MAIOR que 1<br/>
-    - **amount**: MAIOR ou igual a 1
+    Verifique os parametros da transação. Os atributos devem seguir os critérios:
+    - amount: MAIOR ou igual a 1
 
 ```kotlin
 import android.os.Bundle
@@ -16,7 +15,6 @@ import com.linx.paykit.common.Paykit
 import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.PaymentParameters
-import com.linx.paykit.common.parameter.type.CreditTransactionType
 import com.linx.paykit.core.PaykitFactory
 import java.math.BigDecimal
 
@@ -28,15 +26,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Credito parcelado"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Wallet"))
 
-        val creditParameter = CreditParameters(
-            installments = 2,  // Número de parcelas
+        val walletParameter = PaymentParameters(
             amount = BigDecimal("100.00"),  // Valor da transação
-            creditType =  CreditTransactionType.AT_SIGHT // Crédito parcelado
         )
 
-        paykit.credit(creditParameter, object : Callback<PaymentResult> {
+        paykit.wallet(walletParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
                 Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
                 onPaymentResult(result.id, result.transactionData)
@@ -50,5 +46,4 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-{% include "../snippets/credit-type.md" %}
 {% include "../snippets/payment-result.md" %}
