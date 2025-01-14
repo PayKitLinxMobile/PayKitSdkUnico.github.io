@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val creditParameter = CreditParameters(
             installments = 2,  // Número de parcelas
             amount = BigDecimal("100.00"),  // Valor da transação
-            creditType =  CreditTransactionType.AT_SIGHT // Crédito parcelado
+            creditType =  CreditTransactionType.STORE_INSTALMENTS // Crédito parcelado lojista
         )
 
         paykit.credit(creditParameter, object : Callback<PaymentResult> {

@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             debitType = DebitTransactionType.AT_SIGHT // Débito à vista
         )
 
-        paykit.credit(debitParameter, object : Callback<PaymentResult> {
+        paykit.debit(debitParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
                 Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
                 onPaymentResult(result.id, result.transactionData)

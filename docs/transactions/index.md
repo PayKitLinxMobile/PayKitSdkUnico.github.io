@@ -34,4 +34,4 @@ O SDK Único atualmente suporta as seguintes operações.
   [Wallet]: wallet.md
   [Estorno]: estorno.md
   [Reimpressão]: reimpressao.md
-  [Impressão]: reimpressao.md
+  [Impressão]: impressao.md
