@@ -20,12 +20,11 @@ var paykit: Paykit? = null
 
 fun setupPaykit() {
 
+    val sdkUnicoBuildParams = Parameters(this, "AppTeste", "PAYKIT_ID")
     paykit = PaykitFactory().build()
 
-    //Defina os parâmetros de acordo com a adquirente
-    val params = ActivationParameters().apply {
-        
-    }
+    //Defina os parâmetros de acordo com as adquirentes desejadas
+    val params = ActivationParameters("STORE_CNPJ").apply {}
 
     paykit?.activate(p, object : Callback<ActivationResult> {
         override fun execute(result: ActivationResult) {
@@ -35,44 +34,33 @@ fun setupPaykit() {
 }
 ```
 
-A classe `ActivationParameters` possui parâmetros de acordo com o SDK da Adquirente.
+A classe `ActivationParameters` mapeia os parâmetros conforme os requisitos dos SDKs das Adquirentes, que demandam parâmetros específicos para ativação.
 
-=== "Linx DTEF"
+```kotlin
+data class ActivationParameters(
+    val storeCnpj: String,
+    val tef: TefActivationParameters = TefActivationParameters(),
+    val pagSeguro: PagSeguroActivationParameters = PagSeguroActivationParameters()
+)
 
-    ```kotlin
-        val params = ActivationParameters().apply {
-            tef.cnpj = "CNPJ"
-            tef.production = false
-            tef.token = "TOKEN"
-        }
-    ```
+data class TefActivationParameters(
+    var production: Boolean = false,
+    var host: String? = null,
+    var token: String? = null
+)
 
-=== "Stone"
+data class PagSeguroActivationParameters (
+    var activationCode: String? = null
+)
+```
 
-    ```kotlin
-        val params = ActivationParameters().apply {
-            stone.stoneCode = "CODIGO_STONE"
-            stone.context = this.applicationContext
-            stone.dialogMessage = "Dialog Message"
-            stone.dialogTitle = "Dialog Title"
-        }
-    ```
-
-=== "PagSeguro"
-
-    ```kotlin
-        val params = ActivationParameters().apply {
-            pagSeguro.activationCode = "CODIGO_PAG_SEGURO"
-        }
-    ```
-
-=== "Rede"
-
-    ```kotlin
-        val params = ActivationParameters().apply {
-            rede.activationCode = "CODIGO_REDE"
-        }
-    ```
+```kotlin
+val params = ActivationParameters("STORE_CNPJ").apply {
+    tef.production = false
+    tef.token = "TOKEN"
+    pagSeguro.activationCode = "CODIGO_PAG_SEGURO"
+}
+```
 
 !!! Atenção 
 
@@ -125,3 +113,38 @@ Para desativar uma modalidade ou método de pagamento, basta alterar a `flag` de
 ```kotlin
 paykit.paymentMethods[PaymentType.CREDIT]?.enabled = false
 ```
+
+
+Esse recurso também é útil quando o integrador deseja construir a interface de forma dinâmica.
+
+```kotlin
+@Composable
+fun PaymentTypeSelector(
+    paymentMethods: HashMap<PaymentType, PaymentMethod>,
+    selectedType: PaymentType = PaymentType.DEBIT,
+    selectedTransactionType: TransactionType = DebitTransactionType.AT_SIGHT,
+    onTypeChanged: ((PaymentType) -> Unit)? = null,
+    onTransactionTypeChanged: ((TransactionType) -> Unit)? = null
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        paymentMethods.forEach { (paymentType, paymentMethod) ->
+            PaymentTypeOption(
+                paymentType = paymentType,
+                paymentMethod = paymentMethod,
+                isSelected = selectedType == paymentType,
+                selectedTransactionType = selectedTransactionType,
+                onTypeChanged = onTypeChanged,
+                onTransactionTypeChanged = onTransactionTypeChanged
+            )
+        }
+    }
+}
+```
+
+!!! Atenção 
+
+    Verifique a [aplicação de exemplo](./projeto-exemplo.md/#projeto-exemplo) para auxiliar em sua integração.

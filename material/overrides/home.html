@@ -26,5 +26,9 @@
     </div>
   </section>
 {% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+  <script>
+    document.querySelector(".md-main__inner").remove()
+  </script>
+{% endblock %}
 {% block footer %}{% endblock %}
