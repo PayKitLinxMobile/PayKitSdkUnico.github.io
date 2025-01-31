@@ -15,16 +15,17 @@ O SDK Único atualmente oferece suporte para as seguintes operações.
 
 A seguinte tabela resume as operações disponíveis para cada SDK de adquirente integrado ao SDK Único.
 
-| Operação   |TEF|Stone|REDE|PagSeguro| GetNet | Cielo | Adyen | Vero |
-|------------|----|---|------|--|---|----|-----|----|
-| Ativar     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |  
-| Crédito    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️  | ✔️ |
-| Débito     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Voucher    | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
-| PIX        | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Cancelar   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Reversão   | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Reimprimir | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Operação   | Linx TEF  | Stone | Rede  |  PagSeguro  | GetNet  | Cielo | Adyen | Vero  | Sicoob  |
+|------------|-----------|-------|-------|-------------|---------|-------|-------|-------|---------|
+| Ativar     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |  
+| Crédito    |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Débito     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Voucher    |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ❌    |
+| PIX        |  ✔️        |   ✔️   |   ❌  |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Wallet     |  ❌       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |
+| Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |         |
+| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |         |
+| Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |         |
 
 - "✔️" indica que a operação é suportada pelo SDK.
 - "❌" indica que a operação não é suportada pelo SDK.
@@ -44,6 +45,7 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 - PagSeguro
 - Adyen
 - Vero
+- Sicoob
 
 
 ## Dispositivos Suportados
@@ -54,3 +56,4 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 - Gertec GPOS 700X
 - Gertec GPOS 700
 - Ingenico DX8000
+- Verifone X990
