@@ -1,4 +1,4 @@
-# Pre-requisitos para Integração com o SDK Único
+# Pré-requisitos para Integração com o SDK Único
 
 Para integrar o SDK Único na sua aplicação, é necessário atender a determinados requisitos técnicos.
 
@@ -13,15 +13,17 @@ Os terminais compatíveis possuem diferentes versões do sistema operacional, co
 
 |                      |  Stone     |      TEF        | Rede      | Getnet    | PagSeguro | Cielo  | Adyen | Vero | Sicoob |
 |----------------------|------------|-----------------|-----------|-----------|-----------|--------|-------|------|--------|
-| SUNMI P2  v7.1       |     ✔️      |        ✔️        |           |     ✔️     |      ✔️    |        |  ✔️    |  ✔️   |   ✔️    |
-| GPOS 700X: v8.1      |     ✔️      |                 |           |           |           |        |       |      |        |
-| Positivo L400 : v11  |     ✔️      |                 |     ✔️     |           |           |        |       |      |        |
-| Positivo L300 : v7.1 |     ✔️      |                 |           |           |           |        |       |  ✔️   |        |
-| APOS A8: v5.1        |            |                 |           |           |           |        |       |      |        |
+| SUNMI P2  v7.1       |     ✔️      |        ✔️        |           |     ✔️     |      ✔️    |        |       |  ✔️   |   ✔️    |
+| GPOS 700: v5.1       |     ✔️      |        ✔️        |           |           |           |        |       |  ✔️   |        |
+| GPOS 700X: v8.1      |     ✔️      |        ✔️        |           |           |           |        |       |      |        |
+| Positivo L400 : v11  |     ✔️      |                 |     ✔️     |           |           |   ✔️    |       |      |        |
+| Positivo L300 : v7.1 |     ✔️      |                 |           |           |           |   ✔️    |       |  ✔️   |        |
+| APOS A8: v5.1        |            |        ✔️        |           |           |           |        |       |      |        |
 | Verifone X990: v10   |            |                 |           |           |           |        |       |      |   ✔️    |
-| Newland N910:  v10   |            |                 |           |   ✔️       |           |        |       |      |        |
+| Ingenico DX8000: v10 |     ✔️      |                 |           |           |           |   ✔️    |       |      |   ✔️    |
+| Saturn S1F2: v10     |            |                 |           |           |           |        |   ✔️   |      |        |
 
-
+- "✔️" indica que o terminal é compatível pelo SDK.
 
 É essencial desenvolver com retrocompatibilidade para a versão mínima (5.0) a fim de garantir o funcionamento em todos os modelos.
 
@@ -55,3 +57,6 @@ Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua d
 | Vero                 | `1.01.06`         |     ✔️         |
 | Sicoob (P2)          | `1.09`            |     ✔️         |
 | Sicoob (X990)        | `1.09`            |     ✔️         |
+
+- "✔️" indica que a operação é suportada pelo SDK.
+- "❌" indica que a operação não é suportada pelo SDK.
