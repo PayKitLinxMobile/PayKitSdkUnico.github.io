@@ -3,8 +3,13 @@
 ## Passo 1 - Ativação
 
 O SDK único, em sua definição, simplifica a integração com os SDKs das adquirentes, a partir de sua interface única. <br/>
+Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de [configuração](./config-sdk.md) do SDK Único. E seu `PaykitId` que serâ necessário para ativar o SDK Único.<br>
 
-Para integrar sua aplicação com o SDK Único, siga os passos abaixo. Certifique-se de adicionar os devidos imports e configurar os parâmetros corretamente.
+### PaykitId e Credenciamento
+
+Para utilizar o SDK Único, é necessário ser credenciado como Automação Comercial/Integrador. Esse processo é feito ao preencher o formulário na etapa de [configuração](./config-sdk.md) do SDK Único e mediante a aprovação.
+
+Para integrar e ativar sua aplicação com o SDK Único, siga os passos abaixo. Certifique-se de adicionar as devidas importações e configurar os parâmetros corretamente.
 
 ```kotlin
 import android.util.Log
@@ -21,7 +26,7 @@ var paykit: Paykit? = null
 fun setupPaykit() {
 
     val sdkUnicoBuildParams = Parameters(this, "AppTeste", "PAYKIT_ID")
-    paykit = PaykitFactory().build()
+    paykit = PaykitFactory().build(sdkUnicoBuildParams)
 
     //Defina os parâmetros de acordo com as adquirentes desejadas
     val params = ActivationParameters("STORE_CNPJ").apply {}
@@ -34,9 +39,17 @@ fun setupPaykit() {
 }
 ```
 
-A classe `ActivationParameters` mapeia os parâmetros conforme os requisitos dos SDKs das Adquirentes, que demandam parâmetros específicos para ativação.
+A classe `Parameters` mapeiam os parâmetros do SDK Único, que são utilizados no método `activate`.
+
+A classe `ActivationParameters` mapeiam os parâmetros conforme os requisitos dos SDKs das Adquirentes, que demandam parâmetros específicos para ativação.
 
 ```kotlin
+data class Parameters(
+    val applicationContext: Context,
+    val appName: String = "",
+    val paykitId: String = ""
+)
+
 data class ActivationParameters(
     val storeCnpj: String,
     val tef: TefActivationParameters = TefActivationParameters(),
@@ -61,10 +74,6 @@ val params = ActivationParameters("STORE_CNPJ").apply {
     pagSeguro.activationCode = "CODIGO_PAG_SEGURO"
 }
 ```
-
-!!! Atenção 
-
-    Verifique na lista de dependências do Android Studio a correta adição do SDK da adquirente, de acordo com a versão solicitada no formulário de acesso ao SDK.
 
 ## Passo 2 - Configuração
 

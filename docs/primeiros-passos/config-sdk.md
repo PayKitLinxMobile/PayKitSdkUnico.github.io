@@ -4,7 +4,7 @@
 
 <!-- A solicitação do `Token de Acesso` deve ser realizada a partir [deste formulário](https://forms.office.com/r/N2JFqQ9KdR). -->
 Para iniciar a configuração do SDK único, o seu projeto precisa incluir as bibliotecas do SDK Único.
-A solicitação do `Token de Acesso` deve ser realizada a partir do formulário abaixo:
+A solicitação do `Token de Acesso` e credenciamento devem ser realizados a partir do formulário abaixo:
 
 <iframe width="840px" height="780px" src="https://forms.office.com/r/N2JFqQ9KdR?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
@@ -68,7 +68,7 @@ android {
 Adicionar as seguintes dependências necessárias
 
 ```kotlin
-val sdkPayServicesVersion = "0.0.000168"
+val sdkPayServicesVersion = "0.0.000169"
 
 implementation("SDKPayServices:core:$sdkPayServicesVersion")
 implementation("SDKPayServices:config:$sdkPayServicesVersion")
