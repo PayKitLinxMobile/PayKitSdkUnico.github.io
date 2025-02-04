@@ -17,16 +17,24 @@ Repositório da documentação do SDK Único.
     2. Instalar Virtual Environment
 
     ```bash
-    python3 -m pip install venv
-    # ou
-    pip install venv
+    python3 -m pip install --upgrade pip
+    python3 -m pip install virtualenv
     ```
 
 - Iniciar o Virtual Environment:
 
+    Linux/MacOS
+
     ```bash
     python3 -m venv .venv
     source .venv/bin/activate
+    ```
+
+    Windows
+
+    ```ps
+    python -m venv .venv
+    .venv\Scripts\Activate
     ```
 
 - Instalar dependências de projeto no Virtual Environment:
