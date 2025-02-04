@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Cancelamento"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Cancelamento", "PAYKIT_ID"))
 
         val cancelParameter = CancelParameter(
             paymentId = "1",  // (transactionId) NSU da Transação

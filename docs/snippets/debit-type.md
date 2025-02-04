@@ -1,4 +1,4 @@
-## Explicação do `DebitTransactionType`
+### Explicação do `DebitTransactionType`
 
 Para o `debitType` é utilizado um `enum` para identificação da Modalidade de Débito.
 

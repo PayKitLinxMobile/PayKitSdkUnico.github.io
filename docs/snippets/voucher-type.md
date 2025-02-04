@@ -1,4 +1,4 @@
-## Explicação do `VoucherTransactionType`
+### Explicação do `VoucherTransactionType`
 
 Para o `voucherType` é utilizado um `enum` para identificação da Modalidade de Voucher.
 

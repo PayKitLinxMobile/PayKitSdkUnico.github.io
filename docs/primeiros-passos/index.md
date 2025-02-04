@@ -15,16 +15,17 @@ O SDK Único atualmente oferece suporte para as seguintes operações.
 
 A seguinte tabela resume as operações disponíveis para cada SDK de adquirente integrado ao SDK Único.
 
-| Operação   |TEF|Stone|REDE|PagSeguro| GetNet | Cielo | Adyen | Vero |
-|------------|----|---|------|--|---|----|-----|----|
-| Ativar     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |  
-| Crédito    | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️  | ✔️ |
-| Débito     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Voucher    | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
-| PIX        | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Cancelar   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Reversão   | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
-| Reimprimir | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️ | ✔️  | ✔️ |
+| Operação   |  TEF      | Stone | Rede  |  PagSeguro  | GetNet  | Cielo | Adyen | Vero  | Sicoob  |
+|------------|-----------|-------|-------|-------------|---------|-------|-------|-------|---------|
+| Ativar     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |  
+| Crédito    |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Débito     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Voucher    |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ❌    |
+| PIX        |  ✔️        |   ✔️   |   ❌  |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Wallet     |  ❌       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |
+| Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
 
 - "✔️" indica que a operação é suportada pelo SDK.
 - "❌" indica que a operação não é suportada pelo SDK.
@@ -37,20 +38,27 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 ## Adquirentes Integradas
 
 - Stone
-- Linx Tef
+- Linx TEF
 - Rede
 - GetNet
 - Cielo
 - PagSeguro
 - Adyen
 - Vero
-
+- Sicoob
 
 ## Dispositivos Suportados
 
 - Sunmi P2-B
-- Positivo L400
-- Positivo L300
-- Gertec GPOS 700X
 - Gertec GPOS 700
+- Gertec GPOS 700X
+- Positivo L300
+- Positivo L400
+- APOS A8
+- Verifone X990
 - Ingenico DX8000
+- Saturn S1F2
+
+!!! Atenção 
+
+    Verificar detalhes na sessão [Pré-requisitos](./requisitos.md/#versoes-android-dos-terminais) para Integação com o SDK Único.

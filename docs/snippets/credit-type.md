@@ -1,4 +1,4 @@
-## Explicação do `CreditTransactionType`
+### Explicação do `CreditTransactionType`
 
 Para o `creditType` é utilizado um `enum` para identificação da Modalidade de Crédito.
 

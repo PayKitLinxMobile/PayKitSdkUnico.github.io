@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Impressão"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Impressão", "PAYKIT_ID"))
 
         val bitmap: Bitmap // Bitmap para impressão
 

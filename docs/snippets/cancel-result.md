@@ -1,4 +1,4 @@
-## Explicação do `CancelResult`
+### Explicação do `CancelResult`
 
 No `callback` da transação, é possível capturar detalhes da adquirente, como detalhado a seguir.
 
