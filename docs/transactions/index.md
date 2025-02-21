@@ -21,6 +21,8 @@ O SDK Único atualmente suporta as seguintes operações.
 - :fontawesome-solid-xmark: __[Cancelamento]__ – Cancelamento de pagamentos
 - :fontawesome-solid-print: __[Reimpressão]__ – Reimpressões de comprovantes cliente/estabelecimento
 - :fontawesome-solid-print: __[Impressão]__ – Impressões de comprovantes bitmap
+- :fontawesome-solid-question: __[Localiza Transação]__ – Localiza uma transação realizada
+
 
 </div>
 
@@ -34,3 +36,4 @@ O SDK Único atualmente suporta as seguintes operações.
   [Wallet]: wallet.md
   [Reimpressão]: reimpressao.md
   [Impressão]: impressao.md
+  [Localiza Transação]: localizar-transacao.md

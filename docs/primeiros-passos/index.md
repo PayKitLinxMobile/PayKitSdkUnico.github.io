@@ -26,6 +26,7 @@ A seguinte tabela resume as operações disponíveis para cada SDK de adquirente
 | Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
 | Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
 | Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
+| Localizar transação |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |
 
 - "✔️" indica que a operação é suportada pelo SDK.
 - "❌" indica que a operação não é suportada pelo SDK.
