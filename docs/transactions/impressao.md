@@ -23,16 +23,18 @@ class MainActivity : AppCompatActivity() {
 
         val bitmap: Bitmap // Bitmap para impressão
 
-        paykit.print(bitmap, object : Callback<Boolean> {
-            override fun execute(result: Boolean) {
+        paykit.print(bitmap, object : Callback<PrintResult> {
+            override fun execute(result: PrintResult) {
                 Log.i("PaymentResult", "Status: ${result}")
                 onPaymentResult(result)
             }
         })
     }
 
-    private fun onPaymentResult(result: Boolean) {
+    private fun onPaymentResult(result: PrintResult) {
         // Implementar a lógica para lidar com o resultado da reversão
     }
 }
 ```
+
+{% include "../snippets/print-result.md" %}
