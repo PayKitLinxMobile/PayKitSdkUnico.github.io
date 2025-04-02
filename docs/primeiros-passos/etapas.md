@@ -6,7 +6,7 @@ Para se integrar com o SDK Único, você precisa passar as seguintes etapas:
 
 Disponibilizamos um ambiente de sandbox (testes) onde é possível simular todas as situações que ocorrem em produção, como transações negadas e timeout. 
 Para receber uma credencial de integração, é necessário se cadastrar em nosso programa de parcerias. 
-Cadastre-se aqui.
+[Cadastre-se aqui](./config-sdk.md).
 
 
 ![Fluxo Integração](../assets/images/fluxo-integracao-completo.png){ loading=lazy }
