@@ -11,7 +11,6 @@ O SDK Único atualmente suporta as seguintes operações.
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-credit-card: __[API SDK Único]__ – API do SDK Único
 - :fontawesome-solid-credit-card: __[Crédito à Vista]__ – Pagamento de crédito a vista
 - :fontawesome-solid-credit-card: __[Crédito Parcelado]__ – Pagamento de crédito Parcelado (Lojista ou Emissor)
 - :fontawesome-regular-credit-card: __[Débito]__ – Pagamento por débito
@@ -26,7 +25,6 @@ O SDK Único atualmente suporta as seguintes operações.
 
 </div>
 
-  [API SDK Único]: paykit.md
   [Cancelamento]: cancelamento.md
   [Crédito à Vista]: credito-a-vista.md
   [Crédito Parcelado]: credito-parcelado.md

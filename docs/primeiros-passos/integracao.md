@@ -3,7 +3,7 @@
 ## Passo 1 - Ativação
 
 O SDK único, em sua definição, simplifica a integração com os SDKs das adquirentes, a partir de sua interface única. <br/>
-Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de [configuração](./config-sdk.md) do SDK Único. E seu `PaykitId` que serâ necessário para ativar o SDK Único.<br>
+Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de [configuração](./config-sdk.md) do SDK Único. E seu `PaykitId` que será necessário para ativar o SDK Único.<br>
 
 ### PaykitId e Credenciamento
 
@@ -39,9 +39,9 @@ fun setupPaykit() {
 }
 ```
 
-A classe `Parameters` mapeiam os parâmetros do SDK Único, que são utilizados no método `activate`.
+A classe `Parameters` mapeia os parâmetros do SDK Único, que são utilizados no método `activate`.
 
-A classe `ActivationParameters` mapeiam os parâmetros conforme os requisitos dos SDKs das Adquirentes, que demandam parâmetros específicos para ativação.
+A classe `ActivationParameters` mapeia os parâmetros conforme os requisitos dos SDKs das Adquirentes, que demandam parâmetros específicos para ativação.
 
 ```kotlin
 data class Parameters(
@@ -80,7 +80,7 @@ val params = ActivationParameters("STORE_CNPJ").apply {
 
 O SDK único permite definir quais modalidades e métodos de pagamento estarão disponíveis, facilitando a configuração por parte do integrador.<br>
 
-A configurações dos métodos de pagamento podem variar por adquirente. Segue abaixo definição e exemplos:
+A configuração dos métodos de pagamento pode variar por adquirente. Segue abaixo definição e exemplos:
 
 
 ```kotlin
@@ -94,7 +94,9 @@ enum class PaymentType {
     DEBIT,
     VOUCHER,
     PIX,
-    WALLET
+    WALLET,
+    FLEET,
+    QR_CODE
 }
 
 data class PaymentMethod(

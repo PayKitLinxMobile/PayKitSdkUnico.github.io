@@ -1,10 +1,7 @@
 # Projeto Exemplo
 
 Para realizar testes com o SDK Único, é preciso selecionar com qual SDK deseja realizar a transação. 
-Para tal, disponiblizamos uma App de Exemplo com flavors específica adquirente.
-
-
-![App](../assets/images/app-keyboard.png){ loading=lazy, width="500" }
+Para tal, disponiblizamos uma App de Exemplo com flavors, definindo qual adquirente desejada.
 
 
 | SDK                 | Versão SDK Único     | Link                                                                                                                 |
