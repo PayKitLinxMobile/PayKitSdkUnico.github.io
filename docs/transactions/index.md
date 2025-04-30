@@ -12,8 +12,6 @@ O SDK Único atualmente suporta as seguintes operações.
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-credit-card: __[Crédito]__ – Pagamento de crédito a vista
-- :fontawesome-solid-credit-card: __[Crédito à Vista]__ – Pagamento de crédito a vista
-- :fontawesome-solid-credit-card: __[Crédito Parcelado]__ – Pagamento de crédito Parcelado (Lojista ou Emissor)
 - :fontawesome-regular-credit-card: __[Débito]__ – Pagamento por débito
 - :fontawesome-solid-ticket: __[Voucher]__ – Pagamento por voucher
 - :simple-pix: __[Pix]__ – Pagamento por Pix
