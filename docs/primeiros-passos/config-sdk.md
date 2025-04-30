@@ -109,7 +109,7 @@ Ao utilizar as bibliotecas standalone, não é necessário definir flavors, perm
 ## Referências de bibliotecas
 
 ```kotlin
-val sdkPayServicesVersion = "0.0.000168"
+val sdkPayServicesVersion = "1.0.1.18662"
 val adquirente = "stone"
 
 implementation("SDKPayServices:core-$adquirente:$sdkPayServicesVersion")
@@ -131,4 +131,5 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")
 | Rede    | `SDKPayServices:core-rede:$version` | `SDKPayServices:rede:$version`
 | Sicoob (P2)   | `SDKPayServices:core-sicoob:$version` | `SDKPayServices:sicoob:$version`
 | Sicoob (X990/DX8000)    | `SDKPayServices:core-sicoobx990DX:$version` | `SDKPayServices:sicoobX990DX:$version`
+| SiTef    | `SDKPayServices:core-sitef:$version` | `SDKPayServices:sitef:$version`
 | Vero    | `SDKPayServices:core-vero:$version` | `SDKPayServices:vero:$version`

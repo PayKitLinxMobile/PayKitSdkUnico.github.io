@@ -14,10 +14,10 @@ Para integrar e ativar sua aplicação com o SDK Único, siga os passos abaixo. 
 ```kotlin
 import android.util.Log
 import com.linx.paykit.common.Callback
-import com.linx.paykit.common.Paykit
 import com.linx.paykit.common.activation.ActivationParameters
 import com.linx.paykit.common.activation.ActivationResult
 import com.linx.paykit.common.builder.Parameters
+import com.linx.paykit.core.Paykit
 import com.linx.paykit.core.PaykitFactory
 
 val TAG = "SDKUnicoExample"
@@ -159,3 +159,7 @@ fun PaymentTypeSelector(
 !!! Atenção 
 
     Verifique a [aplicação de exemplo](./projeto-exemplo.md/#projeto-exemplo) para auxiliar em sua integração.
+
+!!! Atenção 
+
+    Verifique as transações disponíveis em [Transações](../transactions/index.md).

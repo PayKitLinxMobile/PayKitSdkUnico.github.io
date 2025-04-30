@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
-import com.linx.paykit.common.Paykit
-import com.linx.paykit.common.TransactionResultInfo
+import com.linx.paykit.common.TransactionQueryResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.TransactionInfoParameters
+import com.linx.paykit.core.Paykit
 import com.linx.paykit.core.PaykitFactory
 import java.math.BigDecimal
 
@@ -30,16 +30,16 @@ class MainActivity : AppCompatActivity() {
             // externalId = "123456" // ID externo da transação 
         )
 
-        paykit.getTransaction(transactionParameter, object : Callback<TransactionResultInfo?> {
-            override fun execute(result: TransactionResultInfo?) {
-                Log.i("TransactionResultInfo", "Transaction: ${result}")
+        paykit.getTransaction(transactionParameter, object : Callback<TransactionQueryResult?> {
+            override fun execute(result: TransactionQueryResult?) {
+                Log.i("TransactionQueryResult", "Transaction: ${result}")
                 onGetTransaction(result)
             }
         })
     }
 
-    private fun onGetTransaction(transaction: TransactionResultInfo?) {
-        // Implementar a lógica para lidar com o resultado da reversão
+    private fun onGetTransaction(transaction: TransactionQueryResult?) {
+        // Implementar a lógica para lidar com o resultado da consulta
     }
 }
 ```

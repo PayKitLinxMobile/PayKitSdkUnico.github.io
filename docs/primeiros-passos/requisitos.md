@@ -11,17 +11,17 @@ O **SDK Único** é desenvolvido nativamente para Android, sendo necessário que
 Os terminais compatíveis possuem diferentes versões do sistema operacional, conforme definido pelo fabricante:
 
 
-|                      |  Stone     |      TEF        | Rede      | Getnet    | PagSeguro | Cielo  | Adyen | Vero | Sicoob |
-|----------------------|------------|-----------------|-----------|-----------|-----------|--------|-------|------|--------|
-| SUNMI P2  v7.1       |     ✔️      |        ✔️        |           |     ✔️     |      ✔️    |        |       |  ✔️   |   ✔️    |
-| GPOS 700: v5.1       |     ✔️      |        ✔️        |           |           |           |        |       |  ✔️   |        |
-| GPOS 700X: v8.1      |     ✔️      |        ✔️        |           |           |           |        |       |      |        |
-| Positivo L400 : v11  |     ✔️      |                 |     ✔️     |           |           |   ✔️    |       |      |        |
-| Positivo L300 : v7.1 |     ✔️      |                 |           |           |           |   ✔️    |       |  ✔️   |        |
-| APOS A8: v5.1        |            |        ✔️        |           |           |           |        |       |      |        |
-| Verifone X990: v10   |            |                 |           |           |           |        |       |      |   ✔️    |
-| Ingenico DX8000: v10 |     ✔️      |                 |           |           |           |   ✔️    |       |      |   ✔️    |
-| Saturn S1F2: v10     |            |                 |           |           |           |        |   ✔️   |      |        |
+|                      |  Stone     |      TEF        | Rede      | Getnet    | PagSeguro | Cielo  | Adyen | Vero | Sicoob | Sicredi |
+|----------------------|------------|-----------------|-----------|-----------|-----------|--------|-------|------|--------|--------|
+| SUNMI P2  v7.1       |     ✔️      |        ✔️        |           |     ✔️     |      ✔️    |        |       |  ✔️   |   ✔️    |        |
+| GPOS 700: v5.1       |     ✔️      |        ✔️        |           |           |           |        |       |  ✔️   |        |        |
+| GPOS 700X: v8.1      |     ✔️      |        ✔️        |           |           |           |        |       |      |        |        |
+| Positivo L400 : v11  |     ✔️      |                 |     ✔️     |           |           |   ✔️    |       |      |        |        |
+| Positivo L300 : v7.1 |     ✔️      |                 |           |           |           |   ✔️    |       |  ✔️   |        |        |
+| APOS A8: v5.1        |            |        ✔️        |           |           |           |        |       |      |        |        |
+| Verifone X990: v10   |            |                 |           |           |           |        |       |      |   ✔️    |        |
+| Ingenico DX8000: v10 |     ✔️      |                 |           |           |           |   ✔️    |       |      |   ✔️    |   ✔️    |
+| Saturn S1F2: v10     |            |                 |           |           |           |        |   ✔️   |      |        |        |
 
 - "✔️" indica que o terminal é compatível pelo SDK.
 
@@ -57,6 +57,9 @@ Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua d
 | Vero                 | `1.01.06`         |     ✔️         |
 | Sicoob (P2)          | `1.09`            |     ✔️         |
 | Sicoob (X990)        | `1.09`            |     ✔️         |
+| Sicredi              | `3.218` ***       |     ❌         |
 
-- "✔️" indica que a operação é suportada pelo SDK.
-- "❌" indica que a operação não é suportada pelo SDK.
+- "✔️" indica que a adquirente possui Deeplink.
+- "❌" indica que a adquirente não possui Deeplink.
+
+*** - Usa o SiTef. A versão indicada é a versão do mSiTef

@@ -1,9 +1,3 @@
-#### `PaymentResult`
-
-O objeto `PaymentResult`, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:
-
-| Campo      | Tipo     | Descrição                                                            |
-|------------|----------|----------------------------------------------------------------------|
 | **id**     | `String` | Identificador único da transação.                              |
 {% include "./processor-Field.md" %}
 | **status** | `Enum`   | Representa o status da transação. Valores possíveis:                 |
@@ -27,7 +21,6 @@ O objeto `PaymentResult`, retornado no callback da transação, contém informa�
 | **transactionInfo** | `Object` | Representa dados de retorno transacional da adquirente. |
 | **nsuInfo** | `Object` | Representa dados de NSU do retorno transacional da adquirente. |
 | **dateTime** | `Date` | Representa data e hora da transação. |
-
 
 
 

@@ -15,18 +15,18 @@ O SDK Único atualmente oferece suporte para as seguintes operações.
 
 A seguinte tabela resume as operações disponíveis para cada SDK de adquirente integrado ao SDK Único.
 
-| Operação   |  TEF      | Stone | Rede  |  PagSeguro  | GetNet  | Cielo | Adyen | Vero  | Sicoob  |
-|------------|-----------|-------|-------|-------------|---------|-------|-------|-------|---------|
-| Ativar     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |  
-| Crédito    |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Débito     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Voucher    |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ❌    |
-| PIX        |  ✔️        |   ✔️   |   ❌  |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Wallet     |  ❌       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |
-| Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |
-| Localizar transação |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |
+| Operação   |  TEF      | Stone | Rede  |  PagSeguro  | GetNet  | Cielo | Adyen | Vero  | Sicoob  | Sicredi |
+|------------|-----------|-------|-------|-------------|---------|-------|-------|-------|---------|---------|
+| Ativar     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |  
+| Crédito    |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Débito     |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Voucher    |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ❌    |   ❌     |
+| PIX        |  ✔️        |   ✔️   |   ❌  |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ❌     |
+| Wallet     |  ✔️       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |   ❌     |
+| Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Localizar transação |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |   ❌     |
 
 - "✔️" indica que a operação é suportada pelo SDK.
 - "❌" indica que a operação não é suportada pelo SDK.
@@ -47,6 +47,7 @@ Esta tabela facilita a visualização das funcionalidades oferecidas por cada ad
 - Adyen
 - Vero
 - Sicoob
+- Sicredi
 
 ## Dispositivos Suportados
 

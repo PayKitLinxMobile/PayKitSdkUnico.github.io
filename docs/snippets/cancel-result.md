@@ -1,9 +1,17 @@
 ### Explicação do `CancelResult`
 
-No `callback` da transação, é possível capturar detalhes da adquirente, como detalhado a seguir.
+O objeto `CancelResult`, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:
 
- - `id`: Identificador único da transação (NSU).
- - `processor`: Tipo de processador de pagamento utilizado (STONE, TEF, REDE, GETNET, PAGSEGURO, VERO).
- - `status`: Status da transação.
- - `message`: Mensagem de sucesso ou erro, se houver.
- - `transactionData`: Objeto contendo o resultado detalhado da transação da adquirente, útil para deserialização.
+| Campo      | Tipo     | Descrição                                                            |
+|------------|----------|----------------------------------------------------------------------|
+| **id**     | `String?` | Identificador único da transação.                                   |
+{% include "../snippets/processor-Field.md" %}
+| **status** | `Enum`   | Representa o status da transação. Valores possíveis:                 |
+|            |          | - `PENDING`: Aguardando processamento.                               |
+|            |          | - `APPROVED`: Transação aprovada.                                    |
+|            |          | - `CANCELLED`: Transação cancelada.                                  |
+|            |          | - `ERROR`: Ocorreu um erro na transação.                             |
+|            |          | - `DECLINED`: Transação recusada.                                    |
+| **rawData** | `Map<String, String>` |  Objeto contendo o resultado detalhado da transação da adquirente, útil para deserialização.    |
+| **message** | `String` | Mensagem de sucesso ou erro, caso aplicável.                        |
+| **transactionInfo** | `Object` | Representa dados de retorno transacional da adquirente. |

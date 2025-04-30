@@ -12,11 +12,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
-import com.linx.paykit.common.Paykit
 import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.PaymentParameters
 import com.linx.paykit.common.parameter.type.CreditTransactionType
+import com.linx.paykit.core.Paykit
 import com.linx.paykit.core.PaykitFactory
 import java.math.BigDecimal
 

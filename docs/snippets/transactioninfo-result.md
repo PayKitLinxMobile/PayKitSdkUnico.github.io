@@ -1,10 +1,25 @@
-### Explicação do `TransactionResultInfo`
+### Explicação do `TransactionQueryResult`
 
-No `callback` da transação, é possível capturar detalhes da transação, como detalhado a seguir.
+O objeto `TransactionQueryResult`, retornado no callback da transação, contém informações da consulta. Abaixo estão os principais campos disponíveis:
 
- - `id`: Identificador único da transação (NSU).
- - `externalId`: Identificador externo da transação (Informado pela automação comercial).
- - `processor`: Tipo de processador de pagamento utilizado (STONE, TEF, REDE, GETNET, PAGSEGURO, VERO).
- - `status`: Status da transação.
- - `amount`: Valor da transação.
- - `dateTime`: Representa data e hora da transação. 
+| Campo      | Tipo     | Descrição                                                            |
+|------------|----------|----------------------------------------------------------------------|
+| **id**     | `String?` | Identificador único da transação.                                   |
+| **externalId**  | `String?` | Identificador externo da transação (Informado pela automação comercial). |
+{% include "./processor-Field.md" %}
+| **status** | `Enum`   | Representa o status da transação. Valores possíveis:                 |
+|            |          | - `PENDING`: Aguardando processamento.                               |
+|            |          | - `APPROVED`: Transação aprovada.                                    |
+|            |          | - `CANCELLED`: Transação cancelada.                                  |
+|            |          | - `ERROR`: Ocorreu um erro na transação.                             |
+|            |          | - `DECLINED`: Transação recusada.                                    |
+| **amount** | `BigDecimal`   | Representa o valor da transação.                |
+| **dateTime** | `Date?` |  Representa data e hora da transação.    |
+| **paymentType** | `Enum`   | Representa o método de pagamento da transação. Valores possíveis:                 |
+|            |          | - `CREDIT`                               |
+|            |          | - `DEBIT`                                    |
+|            |          | - `VOUCHER`                                 |
+|            |          | - `PIX`                             |
+|            |          | - `WALLET`                                  |
+|            |          | - `FLEET`                                  |
+|            |          | - `QR_CODE`                                  |

@@ -114,16 +114,16 @@ nav:
     - Processo de Integração: primeiros-passos/etapas.md
     - Configuração do SDK: primeiros-passos/config-sdk.md
     - API SDK Único: primeiros-passos/paykit.md
-    - Projeto Exemplo: primeiros-passos/projeto-exemplo.md
     - Desenvolvimento a Primeira Integração: primeiros-passos/integracao.md
+    - Projeto Exemplo: primeiros-passos/projeto-exemplo.md
   - Transações:
     - transactions/index.md
-    - Crédito à Vista: transactions/credito-a-vista.md
-    - Crédito Parcelado: transactions/credito-parcelado.md
+    - Crédito: transactions/credito.md
     - Débito: transactions/debito.md
     - Voucher: transactions/voucher.md
     - Pix: transactions/pix.md
     - Wallet: transactions/wallet.md
+    - Frota: transactions/frota.md
     - Cancelamento: transactions/cancelamento.md
     # - Estorno: transactions/estorno.md
     - Reimpressão: transactions/reimpressao.md
