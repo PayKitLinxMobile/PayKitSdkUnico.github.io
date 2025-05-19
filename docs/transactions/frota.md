@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         paykit = PaykitFactory().build(Parameters(this.applicationContext, "Frota", PaykitId("PAYKIT_ID")))
 
-        val unifiedFleetRequest = TefFleetGenericBuilder()
+        val unifiedFleetRequest = TefFleetUnifiedBuilder()
             .setAcquirerCode(121)
             .setCpf("12345678901")
             .setVehiclePlate("ABC1234")
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Frota", "PAYKIT_ID"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Frota", PaykitId("PAYKIT_ID")))
 
         val fleetParameters = FleetParameters(
             amount = BigDecimal("100.00"),      // Valor da transação
