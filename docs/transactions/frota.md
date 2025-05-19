@@ -17,6 +17,8 @@ import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.FleetParameters
 import com.linx.paykit.common.builder.TefFleetUnifiedBuilder
+import com.linx.paykit.common.builder.models.RefuelItem
+import com.linx.paykit.common.builder.models.ServiceItem
 import com.linx.paykit.core.Paykit
 import com.linx.paykit.core.PaykitFactory
 
@@ -44,6 +46,36 @@ class MainActivity : AppCompatActivity() {
             .setEmployeeId("12345678901")
             .setHasBrPremmia(false)
             .setBrPremmiaEmployeeCode("12345678901")
+            .addServiceItem(
+                ServiceItem(
+                    1231, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                )
+            )
+            .setServiceItems(
+                listOf(
+                    ServiceItem(
+                        1231, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                    ),
+                    ServiceItem(
+                        1232, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                    )
+                )
+            )
+            .addRefuelItem(
+                RefuelItem(
+                    123, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                )
+            )
+            .setRefuelItems(
+                listOf(
+                    RefuelItem(
+                        123, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                    ),
+                    RefuelItem(
+                        125, 123.45.toBigDecimal(), 123.45.toBigDecimal()
+                    )
+                )
+            )
             .setParameter(
                 "brand", ParameterValue.Str("Rovias S/A")
             )
@@ -87,6 +119,8 @@ import com.linx.paykit.common.Callback
 import com.linx.paykit.common.PaymentResult
 import com.linx.paykit.common.builder.Parameters
 import com.linx.paykit.common.parameter.FleetParameters
+import com.linx.paykit.common.builder.models.RefuelItem
+import com.linx.paykit.common.builder.models.ServiceItem
 import com.linx.paykit.core.Paykit
 import com.linx.paykit.core.PaykitFactory
 

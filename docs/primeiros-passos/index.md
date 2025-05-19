@@ -23,6 +23,7 @@ A seguinte tabela resume as operações disponíveis para cada SDK de adquirente
 | Voucher    |  ✔️        |   ✔️   |   ✔️   |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ❌    |   ❌     |
 | PIX        |  ✔️        |   ✔️   |   ❌  |       ❌    |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ❌     |
 | Wallet     |  ✔️       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |   ❌     |
+| Frotas |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |   ❌     |
 | Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
 | Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
 | Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |

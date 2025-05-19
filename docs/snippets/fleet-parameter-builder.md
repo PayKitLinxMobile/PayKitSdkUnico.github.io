@@ -43,7 +43,7 @@ builder
 
 ```kotlin
 // Adicionar Serviço
-builder.setServiceItem(
+builder.addServiceItem(
     ServiceItem(
         code = "SERV1",
         quantity = 2.0,
@@ -52,7 +52,7 @@ builder.setServiceItem(
 )
 
 // Adicionar Abastecimento
-builder.setRefuelItem(
+builder.addRefuelItem(
     RefuelItem(
         code = "COMB1",
         quantity = 30.0,
