@@ -1,4 +1,4 @@
-#### `PaymentResult`
+## `PaymentResult`
 
 O objeto `PaymentResult`, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:
 
