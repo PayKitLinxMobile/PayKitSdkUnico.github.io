@@ -129,6 +129,7 @@ nav:
     - Reimpressão: transactions/reimpressao.md
     - Impressão: transactions/impressao.md
     - Localizar transação: transactions/localizar-transacao.md
+  - Deeplink: deeplink/index.md
   - O que há de novo?:
     - SDK Único:     
       - releases/index.md
