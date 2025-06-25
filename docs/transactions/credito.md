@@ -22,7 +22,7 @@ Independente da modalidade, os resultados da transação serão devolvidos no ob
 !!! Atenção 
 
     Verifique os parametros da transação. Os atributos devem seguir os critérios: <br/>
-    - **amount**: MAIOR ou igual a 1
+    - **amount**: MAIOR ou igual a 0.01
 
 ```kotlin
 import android.os.Bundle
@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.credit(creditParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transaction)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     Verifique os parametros da transação. Os atributos devem seguir os critérios:<br/>
     - **installments**: MAIOR que 1<br/>
-    - **amount**: MAIOR ou igual a 1
+    - **amount**: MAIOR ou igual a 0.01
 
 ```kotlin
 import android.os.Bundle
@@ -106,8 +106,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.credit(creditParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }

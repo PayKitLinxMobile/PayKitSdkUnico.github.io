@@ -4,22 +4,19 @@ O objeto `TransactionQueryResult`, retornado no callback da transação, contém
 
 | Campo      | Tipo     | Descrição                                                            |
 |------------|----------|----------------------------------------------------------------------|
-| **id**     | `String?` | Identificador único da transação.                                   |
-| **externalId**  | `String?` | Identificador externo da transação (Informado pela automação comercial). |
+| **id**     | `String` | Identificador único da transação.                                   |
+| **externalId**  | `String` | Identificador externo da transação (Informado pela automação comercial). |
 {% include "./processor-Field.md" %}
-| **status** | `Enum`   | Representa o status da transação. Valores possíveis:                 |
-|            |          | - `PENDING`: Aguardando processamento.                               |
-|            |          | - `APPROVED`: Transação aprovada.                                    |
-|            |          | - `CANCELLED`: Transação cancelada.                                  |
-|            |          | - `ERROR`: Ocorreu um erro na transação.                             |
-|            |          | - `DECLINED`: Transação recusada.                                    |
+{% include "./status-Field.md" %}
 | **amount** | `BigDecimal`   | Representa o valor da transação.                |
-| **dateTime** | `Date?` |  Representa data e hora da transação.    |
-| **paymentType** | `Enum`   | Representa o método de pagamento da transação. Valores possíveis:                 |
-|            |          | - `CREDIT`                               |
-|            |          | - `DEBIT`                                    |
-|            |          | - `VOUCHER`                                 |
-|            |          | - `PIX`                             |
-|            |          | - `WALLET`                                  |
-|            |          | - `FLEET`                                  |
-|            |          | - `QR_CODE`                                  |
+| **dateTime** | `Date` |  Representa data e hora da transação.    |
+{% include "./paymentType-Field.md" %}
+| **transactionType** | `Interface` | Representa a interface que o enumerador do modalidade de cada método possuí. Exemplo: Crédito Parcelado Lojista. Ver exemplos abaixo. (`CreditTransactionType`,`DebitTransactionType`,`VoucherTransactionType`) |
+| **nsuInfo** | `NsuInfo` | Representa dados de NSU do retorno transacional da adquirente. |
+| **transactionInfo** | `TransactionInfo` | Representa dados de retorno transacional da adquirente. |
+| **rawData**  | `Map<String, String>` | Retorno estilo chave/valor recebido do provedor. |
+|              |                       | OBS: Os dados desse campo mudam de acordo com o provedor e o tipo de transação. |
+
+{% include "./nsuInfo-type.md" %}
+
+{% include "./transactionInfo-type.md" %}

@@ -1,10 +1,26 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de **Débito**, utilize o exemplo abaixo. 
+Para realizar uma Transação de **Débito**, utilize o método **debit** da classe **paykit**.
+
+Os parâmetros de entrada da transação são configurados no objeto **DebitParameters**
+
+{% include "../snippets/debit-parameters.md" %}
+
+Normalmente utilizamos a modalidade de débito a vista (AT_SIGHT). Mas a adquirente Vero aceita transaçoes pré-datadas (POSTDATED) e parceladas (WITH_INSTALMENTS) também.
+
+A tabela a seguir mostra todas as opções disponíveis.
+
+{% include "../snippets/debit-type.md" %}
+
+Independente da modalidade, os resultados da transação serão devolvidos no objeto **paymentResult**
+
+{% include "../snippets/payment-result.md" %}
+
+## Exemplos
 
 !!! Atenção 
 
     Verifique os parametros da transação. Os atributos devem seguir os critérios: <br/>
-    - **amount**: MAIOR ou igual a 1
+    - **amount**: MAIOR ou igual a 0.01
 
 ```kotlin
 import android.os.Bundle
@@ -36,8 +52,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.debit(debitParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }
