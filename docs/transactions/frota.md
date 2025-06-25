@@ -4,7 +4,7 @@ Para realizar uma Transação de **Frota**, utilize o exemplo abaixo.
 !!! Atenção 
 
     Verifique os parâmetros da transação. Os atributos devem seguir os critérios:
-    - amount: MAIOR ou igual a 1
+    - amount: MAIOR ou igual a 0.01
 
 ## Fluxo Unificado de Frotas (TEFs)
 
@@ -96,8 +96,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.fleet(fleetParameters, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }
@@ -147,8 +147,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.fleet(fleetParameters, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }

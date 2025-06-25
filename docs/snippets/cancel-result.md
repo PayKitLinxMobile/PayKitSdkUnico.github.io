@@ -4,14 +4,20 @@ O objeto `CancelResult`, retornado no callback da transação, contém informaç
 
 | Campo      | Tipo     | Descrição                                                            |
 |------------|----------|----------------------------------------------------------------------|
-| **id**     | `String?` | Identificador único da transação.                                   |
+| **id**     | `String` | Identificador único da transação.                                   |
+| **externalId** | `String` | Identificador externo para a transação.                          |
 {% include "../snippets/processor-Field.md" %}
-| **status** | `Enum`   | Representa o status da transação. Valores possíveis:                 |
-|            |          | - `PENDING`: Aguardando processamento.                               |
-|            |          | - `APPROVED`: Transação aprovada.                                    |
-|            |          | - `CANCELLED`: Transação cancelada.                                  |
-|            |          | - `ERROR`: Ocorreu um erro na transação.                             |
-|            |          | - `DECLINED`: Transação recusada.                                    |
-| **rawData** | `Map<String, String>` |  Objeto contendo o resultado detalhado da transação da adquirente, útil para deserialização.    |
+{% include "../snippets/status-Field.md" %}
+| **amount** | `BigDecimal`   | Representa o valor da transação original.                                    |
+| **originalId** | `String`    | Identificador da transação original.                                    |
+| **cancelledAmount** | `BigDecimal`   | Representa o valor da transação de cancelamento.                   |
 | **message** | `String` | Mensagem de sucesso ou erro, caso aplicável.                        |
-| **transactionInfo** | `Object` | Representa dados de retorno transacional da adquirente. |
+| **dateTime** | `Date` | Representa data e hora da transação. |
+| **nsuInfo** | `NsuInfo` | Representa dados de NSU do retorno transacional da adquirente. |
+| **transactionInfo** | `TransactionInfo` | Representa dados de retorno transacional da adquirente. |
+| **rawData**  | `Map<String, String>` | Retorno estilo chave/valor recebido do provedor. |
+|              |                       | OBS: Os dados desse campo mudam de acordo com o provedor e o tipo de transação. |
+
+{% include "./nsuInfo-type.md" %}
+
+{% include "./transactionInfo-type.md" %}

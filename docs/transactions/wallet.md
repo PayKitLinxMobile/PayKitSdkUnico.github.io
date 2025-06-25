@@ -4,7 +4,7 @@ Para realizar uma Transação de **Wallet**, utilize o exemplo abaixo.
 !!! Atenção 
 
     Verifique os parametros da transação. Os atributos devem seguir os critérios:
-    - amount: MAIOR ou igual a 1
+    - amount: MAIOR ou igual a 0.01
 
 ```kotlin
 import android.os.Bundle
@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.wallet(walletParameter, object : Callback<PaymentResult> {
             override fun execute(result: PaymentResult) {
-                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }

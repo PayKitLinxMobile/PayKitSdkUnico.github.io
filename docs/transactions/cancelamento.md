@@ -1,6 +1,16 @@
 O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. 
-Para realizar uma Transação de **Cancelamento**, utilize o exemplo abaixo.
 
+Para realizar uma Transação de **Cancelamento**, utilize o método **cancel** da classe **paykit**.
+
+Os parâmetros de entrada da transação são configurados no objeto **CancelParameter**
+
+{% include "../snippets/cancel-parameters.md" %}
+
+Os parâmetros `paymentId`, `amount`, `originalPaymentType` e `originalTransactionDate` são utilizados para localizar a transação original que deve ser cancelada. Quando não informado será consultado no momento do cancelamento. Alguns provedores permitem cancelamento parcial (veja regras de negócio com o próprio provedor). Para esse caso possuímos o parâmetro `cancelAmount` que pode ser utilizado. 
+
+## Exemplo
+
+Para realizar uma Transação de **Cancelamento**, utilize o exemplo abaixo.
 
 ```kotlin
 import android.os.Bundle
@@ -32,8 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         paykit.cancel(cancelParameter, object : Callback<CancelResult> {
             override fun execute(result: CancelResult) {
-                 Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.transactionData}")
-                onPaymentResult(result.id, result.transactionData)
+                 Log.i("PaymentResult", "ID: ${result.id}, Transaction: ${result.rawData}")
+                onPaymentResult(result.id, result.rawData)
             }
         })
     }

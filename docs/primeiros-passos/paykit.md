@@ -7,15 +7,15 @@ A interface `Paykit` define os métodos que cada aplicação deve implementar pa
 | Método                          | Descrição                                                                 | Parâmetros                                                         | Retorno             |
 |---------------------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------|---------------------|
 | **activate**                    | Ativa o SDK com os parâmetros fornecidos.                | `activationParameters`: Parâmetros de ativação.                                     | `ActivationResult`  |
-| **credit**                      | Realiza uma transação de crédito.                        | `CreditParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
-| **debit**                       | Realiza uma transação de débito.                         | `DebitParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
+| **credit**                      | Realiza uma transação de crédito.                        | `creditParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
+| **debit**                       | Realiza uma transação de débito.                         | `debitParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
 | **voucher**                     | Processa um pagamento por meio de voucher.               | `paymentParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
 | **pix**                         | Processa um pagamento via PIX.                           | `paymentParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
 | **wallet**                      | Processa um pagamento utilizando carteira digital.       | `paymentParameters`: Parâmetros da transação.                                      | `PaymentResult`     |
 | **fleet**                       | Processa uma transação de controle de frota.             | `paymentParameters`: Parâmetros da transação.                                      | `PaymentResult`     |
 | **cancel**                      | Cancela uma transação.                                   | `cancelParameter`: Parâmetros de cancelamento.                                      | `CancelResult`      |
-| **printLastReceipt**          | Imprime o último recibo.                                | `receiptType`: Tipo de recibo a ser impresso.                                         | `Boolean`           |
-| **print**                       | Imprime uma imagem bitmap.                              | `bitmap`: A imagem a ser impressa.                                                   | `Boolean`           |
+| **printLastReceipt**          | Imprime o último recibo.                                | `receiptType`: Tipo de recibo a ser impresso.                                         | `PrintResult`           |
+| **print**                       | Imprime uma imagem bitmap.                              | `bitmap`: A imagem a ser impressa.                                                   | `PrintResult`           |
 | **retrieveSdkInfo**            | Recupera informações sobre o SDK.                       | `callback`: Callback para receber as informações do SDK.                              | `SdkInfo`           |
 | **startPayment**            | Executa o fluxo genérico de pagamentos do SDK.             | `amount` Valor da transação.<br>`callback`: Callback para receber as informações do SDK.| `PaymentResult`  |
 
@@ -46,5 +46,10 @@ Para realizar uma transação de pagamento, utilize a classe definida na tabela.
 {% include "../snippets/debit-parameters.md" %}
 {% include "../snippets/debit-type.md" %}
 {% include "../snippets/voucher-type.md" %}
+{% include "../snippets/cancel-parameters.md" %}
 
 {% include "../snippets/payment-result.md" %}
+{% include "../snippets/cancel-result.md" %}
+{% include "../snippets/print-result.md" %}
+
+
