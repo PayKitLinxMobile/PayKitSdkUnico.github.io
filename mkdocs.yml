@@ -119,6 +119,7 @@ nav:
   - Transações:
     - transactions/index.md
     - Crédito: transactions/credito.md
+    - Crédito - Pré-autorização: transactions/pre-autorizacao.md
     - Débito: transactions/debito.md
     - Voucher: transactions/voucher.md
     - Pix: transactions/pix.md
