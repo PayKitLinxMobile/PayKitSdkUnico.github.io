@@ -19,7 +19,7 @@ paykit://payment
 O parâmetro `paymentType` determina qual tipo de operação será executada. As operações disponíveis
 são:
 
-1. [**activate**](#1-ativacao-activate) - Ativa o terminal  
+1. [**activate**](#1-ativacao-activate) - Ativa o terminal. *Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja*
 2. [**credit**](#2-pagamento-com-cartao-de-credito-credit) - Realiza pagamento com cartão de crédito  
 3. [**debit**](#3-pagamento-com-cartao-de-debito-debit) - Realiza pagamento com cartão de débito  
 4. [**voucher**](#4-pagamento-com-voucher-voucher) - Realiza pagamento com voucher/vale  
@@ -38,11 +38,13 @@ são:
 
 ## Parâmetros por Método de Pagamento
 
-### 1. Ativação (activate)
+### 1. Ativação
 
 ```
 paykit://payment?paymentType=activate
 ```
+
+_*Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja._
 
 **Parâmetros:**
 
