@@ -6,7 +6,7 @@ A interface `Paykit` define os métodos que cada adquirente deve implementar par
 
 | Método                          | Descrição                                                                 | Parâmetros                                                         | Retorno             |
 |---------------------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------|---------------------|
-| **activate**                    | Ativa o SDK com os parâmetros fornecidos.                | `activationParameters`: Parâmetros de ativação.                                     | `ActivationResult`  |
+| **activate**                    | Ativa o SDK com os parâmetros fornecidos. *Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja.* | `activationParameters`: Parâmetros de ativação.                                     | `ActivationResult`  |
 | **credit**                      | Realiza uma transação de crédito.                        | `creditParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
 | **debit**                       | Realiza uma transação de débito.                         | `debitParameters`: Parâmetros da transação.                                       | `PaymentResult`     |
 | **voucher**                     | Processa um pagamento por meio de voucher.               | `voucherParameters`: Parâmetros da transação.                                       | `PaymentResult`     |

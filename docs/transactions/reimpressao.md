@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Reimpressão", "PAYKIT_ID"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Reimpressão", PaykitId("PAYKIT_ID")))
 
         val receiptType = ReceiptType.MERCHANT // Imprimir comprovante Estabelecimento
 

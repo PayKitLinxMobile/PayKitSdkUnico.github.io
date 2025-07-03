@@ -11,6 +11,10 @@ Para utilizar o SDK Único, é necessário ser credenciado como Automação Come
 
 Para integrar e ativar sua aplicação com o SDK Único, siga os passos abaixo. Certifique-se de adicionar as devidas importações e configurar os parâmetros corretamente.
 
+!!! Atenção
+
+    Realize a operação de ativação apenas 1 (uma) vez no terminal ou quando ele for realocado para outra loja.
+
 ```kotlin
 import android.util.Log
 import com.linx.paykit.common.Callback
@@ -25,7 +29,7 @@ var paykit: Paykit? = null
 
 fun setupPaykit() {
 
-    val sdkUnicoBuildParams = Parameters(this, "AppTeste", "PAYKIT_ID")
+    val sdkUnicoBuildParams = Parameters(this, "AppTeste", PaykitId("PAYKIT_ID"))
     paykit = PaykitFactory().build(sdkUnicoBuildParams)
 
     //Defina os parâmetros de acordo com as adquirentes desejadas
@@ -77,8 +81,11 @@ val params = ActivationParameters("STORE_CNPJ").apply {
 
 ## Passo 2 - Configuração
 
+O SDK Único permite definir quais modalidades e métodos de pagamento estarão disponíveis, facilitando a configuração por parte do integrador.
 
-O SDK único permite definir quais modalidades e métodos de pagamento estarão disponíveis, facilitando a configuração por parte do integrador.<br>
+!!! Atenção
+
+    Realize a operação de configuração sempre que sua aplicação é inicializada.
 
 A configuração dos métodos de pagamento pode variar por adquirente. Segue abaixo definição e exemplos:
 
@@ -156,10 +163,6 @@ fun PaymentTypeSelector(
 }
 ```
 
-!!! Atenção 
+- Verifique a [aplicação de exemplo](./projeto-exemplo.md/#projeto-exemplo) para auxiliar em sua integração.
 
-    Verifique a [aplicação de exemplo](./projeto-exemplo.md/#projeto-exemplo) para auxiliar em sua integração.
-
-!!! Atenção 
-
-    Verifique as transações disponíveis em [Transações](../transactions/index.md).
+- Verifique as transações disponíveis em [Transações](../transactions/index.md).

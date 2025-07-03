@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Voucher", "PAYKIT_ID"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Voucher", PaykitId("PAYKIT_ID")))
 
         val voucherParameter = VoucherParameters(
             amount = BigDecimal("100.00"),  // Valor da transação

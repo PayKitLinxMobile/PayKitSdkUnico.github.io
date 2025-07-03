@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Busca Transação", "PAYKIT_ID"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Busca Transação", PaykitId("PAYKIT_ID")))
 
         // Utilizar o ID da transação ou o ID externo para localizar 
         val transactionParameter = TransactionInfoParameters(
