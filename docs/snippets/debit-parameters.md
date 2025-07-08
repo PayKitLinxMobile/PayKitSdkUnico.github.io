@@ -8,14 +8,15 @@ O objeto `DebitParameters`, utilizado em transações de débito.
 | **installments**         | `Int?`         | O número de parcelas para pagamento. Este campo é opcional.                                |
 | **cpf**                  | `String?`      | CPF do cliente, se aplicável. Este campo é opcional.                                       |
 | **billOfSale**           | `String?`      | Documento de venda associado à transação. Este campo é opcional.                           |
-| **dateTimeOfSale**       | `Date?`        | Data e hora em que a venda foi realizada. Este campo é opcional.                            |
+| **dateTimeOfSale**       | `Date?`        | Data e hora em que a venda foi realizada. Este campo é opcional.                           |
 | **externalId**           | `String?`      | Identificador externo para a transação, se necessário. Este campo é opcional.              |
-| **items**                | `List<OrderItem>?`  | Lista dos items de venda, relacionados a transação a ser realizada. Este campo é opcional.              |
-| **autoPrintReceipt**     | `Boolean`      | Imprime automaticamente o comprovante do lojista quando o processador da transação é o TEF.   |
+| **items**                | `List<OrderItem>?` | Lista dos items de venda, relacionados a transação a ser realizada. Este campo é opcional. |
+| **autoPrintReceipt**     | `Boolean`      | Imprime automaticamente o comprovante do lojista quando o processador da transação é o TEF. |
+| **printMerchantReceipt** | `Boolean`      | Imprime (ou não) o recibo do lojista. Utilizar apenas em totens de auto atendimento.       |
 | **deadline**             | `Int?`         | Data de expiração da primeira parcela, em dias. Este campo é opcional.                     |
 | **postCreditDays**       | `Int?`         | Data de expiração da primeira parcela, em dias. Este campo é opcional.                     |
-| **debitType**            | `DebitTransactionType?`  | Tipo de transação de débito.                                                     |
-| **automaticConfirmation** | `Boolean`  | Envia a confirmação automaticamente. Só utilizada quando o processador da transação é o TEF   |
+| **debitType**            | `DebitTransactionType?` | Tipo de transação de débito.                                                      |
+| **autoConfirm**          | `Boolean?`     | Envia a confirmação automaticamente. Só utilizada quando o processador da transação é o TEF. |
 
 
 

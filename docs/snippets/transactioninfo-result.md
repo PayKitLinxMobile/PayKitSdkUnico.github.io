@@ -1,4 +1,4 @@
-### Explicação do `TransactionQueryResult`
+### Detalhamento do `TransactionQueryResult`
 
 O objeto `TransactionQueryResult`, retornado no callback da transação, contém informações da consulta. Abaixo estão os principais campos disponíveis:
 

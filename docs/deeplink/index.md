@@ -19,7 +19,7 @@ paykit://payment
 O parâmetro `paymentType` determina qual tipo de operação será executada. As operações disponíveis
 são:
 
-1. [**activate**](#1-ativacao-activate) - Ativa o terminal  
+1. [**activate**](#1-ativacao-activate) - Ativa o terminal. *Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja*
 2. [**credit**](#2-pagamento-com-cartao-de-credito-credit) - Realiza pagamento com cartão de crédito  
 3. [**debit**](#3-pagamento-com-cartao-de-debito-debit) - Realiza pagamento com cartão de débito  
 4. [**voucher**](#4-pagamento-com-voucher-voucher) - Realiza pagamento com voucher/vale  
@@ -38,11 +38,13 @@ são:
 
 ## Parâmetros por Método de Pagamento
 
-### 1. Ativação (activate)
+### 1. Ativação
 
 ```
 paykit://payment?paymentType=activate
 ```
+
+_*Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja._
 
 **Parâmetros:**
 
@@ -66,7 +68,8 @@ paykit://payment?paymentType=credit
 - `installments`: Número de parcelas (opcional)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `cpf`: CPF do cliente (opcional, sem máscara)
 - `transactionType`: Tipo de transação de crédito (at_sight, installments, store_installments, etc.)
@@ -85,7 +88,8 @@ paykit://payment?paymentType=debit
 - `installments`: Número de parcelas (opcional)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `cpf`: CPF do cliente (opcional, sem máscara)
 - `postCreditDays`: Dias para pós-datamento (opcional)
@@ -106,7 +110,8 @@ paykit://payment?paymentType=voucher
   R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `cpf`: CPF do cliente (opcional, sem máscara)
 - `transactionType`: Tipo de voucher (food, meal, automotive, culture, benefits, etc.)
@@ -124,7 +129,8 @@ paykit://payment?paymentType=fleet
   R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `cpf`: CPF do cliente (opcional, sem máscara)
 - `providerParams`: Parâmetros específicos do provedor (JSON codificado para URL)
@@ -142,7 +148,8 @@ paykit://payment?paymentType=pix
   R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `providerParams`: Parâmetros específicos do provedor (JSON codificado para URL)
 - `orderItems`: Lista de itens do pedido (opcional, formato JSON ou delimitado)
@@ -159,7 +166,8 @@ paykit://payment?paymentType=wallet
   R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `providerParams`: Parâmetros específicos do provedor (JSON codificado para URL)
 - `orderItems`: Lista de itens do pedido (opcional, formato JSON ou delimitado)
@@ -176,7 +184,8 @@ paykit://payment?paymentType=qrcode
   R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `billOfSale`: Referência do pedido/venda
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `providerParams`: Parâmetros específicos do provedor (JSON codificado para URL)
 - `orderItems`: Lista de itens do pedido (opcional, formato JSON ou delimitado)
@@ -240,7 +249,8 @@ paykit://payment?paymentType=cancel
 - `amount`: Valor a ser cancelado (pode ser informado como valor inteiro em centavos, ex: "1000"
   para R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)
 - `autoPrintReceipt`: Indicador para imprimir recibo (true/false)
-- `automaticConfirmation`: Indicador para confirmação automática (true/false)
+- `printMerchantReceipt`: Indicador para imprimir recibo do lojista (true/false)
+- `autoConfirm`: Indicador para confirmação automática (true/false)
 - `externalId`: ID externo para identificação da transação
 - `dateTimeOfSale`: Data/hora da venda original (timestamp em milissegundos)
 
@@ -480,14 +490,14 @@ dateTimeOfSale=1717401600000
 
 ### Valores Booleanos
 
-Parâmetros como `autoPrintReceipt`, `automaticConfirmation`, `finalizeTransaction` e `isProduction`
+Parâmetros como `autoPrintReceipt`, `printMerchantReceipt`, `autoConfirm`, `finalizeTransaction` e `isProduction`
 aceitam valores `"true"` ou `"false"` como strings.
 
 **Exemplos:**
 
 ```
 autoPrintReceipt=true
-automaticConfirmation=false
+autoConfirm=false
 ```
 
 ## Processando Resultados
