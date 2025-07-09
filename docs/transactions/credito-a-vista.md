@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Credito à Vista", "PAYKIT_ID"))
+        paykit = PaykitFactory().build(Parameters(this.applicationContext, "Credito à Vista", PaykitId("PAYKIT_ID"))
 
         val creditParameter = CreditParameters(
             installments = 1,  // Número de parcelas (1 para crédito à vista)

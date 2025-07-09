@@ -1,4 +1,4 @@
-### Explicação do `PrintResult`
+### Detalhamento do `PrintResult`
 
 O objeto `PrintResult`, retornado no callback da transação, contém informações essenciais sobre o status da impressão. Abaixo estão os principais campos disponíveis:
 
