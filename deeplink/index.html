@@ -1,0 +1,2734 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gabrieldavid5.github.io/sdkunico/deeplink/">
+      
+      
+        <link rel="prev" href="../transactions/localizar-transacao/">
+      
+      
+        <link rel="next" href="../releases/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Deeplink - Documentação SDK Único</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link rel="stylesheet" href="../assets/stylesheets/custom.7c86dd97.min.css">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracao-deeplink-sdk-unico" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Não mostrar isso novamente">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Documentação SDK Único" class="md-header__button md-logo" aria-label="Documentação SDK Único" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação SDK Único
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deeplink
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="purple"  aria-label="Alterar para modo dark"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alterar para modo dark" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="lime"  aria-label="Alterar para modo light"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alterar para modo light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../primeiros-passos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Primeiros Passos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../transactions/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Transações
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Deeplink
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../releases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  O que há de novo?
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentação SDK Único" class="md-nav__button md-logo" aria-label="Documentação SDK Único" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Documentação SDK Único
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Primeiros Passos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeiros Passos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../primeiros-passos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    SDK Único
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            SDK Único
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pré-requisitos para Integração com o SDK Único
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/etapas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Processo de Integração
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/config-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuração do SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/paykit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API SDK Único
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/integracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desenvolvimento a Primeira Integração
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros-passos/projeto-exemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projeto Exemplo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../transactions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Transações
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Transações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/credito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crédito
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/pre-autorizacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crédito - Pré-autorização
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/debito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Débito
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/voucher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Voucher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/pix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/wallet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/frota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frota
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/cancelamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cancelamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/reimpressao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reimpressão
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/impressao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impressão
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transactions/localizar-transacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Localizar transação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deeplink
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deeplink
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rota-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota Base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Operações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-por-metodo-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parâmetros por Método de Pagamento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parâmetros por Método de Pagamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ativacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ativação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pagamento-com-cartao-de-credito-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Pagamento com Cartão de Crédito (credit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pagamento-com-cartao-de-debito-debit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pagamento com Cartão de Débito (debit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pagamento-com-voucher-voucher" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pagamento com Voucher (voucher)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pagamento-com-cartao-de-frota-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Pagamento com Cartão de Frota (fleet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pagamento-via-pix-pix" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Pagamento via PIX (pix)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pagamento-via-carteira-digital-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Pagamento via Carteira Digital (wallet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-pagamento-via-qr-code-qrcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Pagamento via QR Code (qrcode)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-confirmacao-de-transacao-pendente-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Confirmação de Transação Pendente (confirm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-desfazer-transacao-pendente-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Desfazer Transação Pendente (undo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-imprimir-ultimo-recibo-print_last_receipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Imprimir Último Recibo (print_last_receipt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-consulta-de-transacao-get_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Consulta de Transação (get_transaction)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cancelar-transacao-cancel" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cancelar Transação (cancel)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-cancelamento-interativo-cancel_interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Cancelamento Interativo (cancel_interactive)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-impressao-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Impressão (print)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-consulta-de-relatorios-query_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Consulta de Relatórios (query_report)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-transacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Transação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Transação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-cartao-de-credito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Cartão de Crédito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-cartao-de-debito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Cartão de Débito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-voucher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Voucher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formato-dos-itens-do-pedido-orderitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato dos Itens do Pedido (OrderItems)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato dos Itens do Pedido (OrderItems)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-delimitado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato Delimitado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatos-de-string-suportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatos de String Suportados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatos de String Suportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpf-e-cnpj" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPF e CNPJ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parâmetros JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-e-hora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data e Hora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valores Booleanos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processando-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processando Resultados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Implementação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos de Implementação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-implementacao-com-uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Implementação com URI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implementacao-com-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Implementação com Intent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processando-o-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processando o resultado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biblioteca-de-apoio-ao-desenvolvedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biblioteca de Apoio ao Desenvolvedor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biblioteca de Apoio ao Desenvolvedor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deeplinkparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeeplinkParameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deeplinkextensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeeplinkExtensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionparameterbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      TransactionParameterBuilder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymenttypeoption-e-transactiontypeoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaymentTypeOption e TransactionTypeOption
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observações Importantes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    O que há de novo?
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            O que há de novo?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../releases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    SDK Único
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            SDK Único
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rota-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rota Base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-operacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Operações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-por-metodo-de-pagamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parâmetros por Método de Pagamento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parâmetros por Método de Pagamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ativacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ativação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pagamento-com-cartao-de-credito-credit" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Pagamento com Cartão de Crédito (credit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pagamento-com-cartao-de-debito-debit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pagamento com Cartão de Débito (debit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pagamento-com-voucher-voucher" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Pagamento com Voucher (voucher)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pagamento-com-cartao-de-frota-fleet" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Pagamento com Cartão de Frota (fleet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pagamento-via-pix-pix" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Pagamento via PIX (pix)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-pagamento-via-carteira-digital-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Pagamento via Carteira Digital (wallet)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-pagamento-via-qr-code-qrcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Pagamento via QR Code (qrcode)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-confirmacao-de-transacao-pendente-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Confirmação de Transação Pendente (confirm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-desfazer-transacao-pendente-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Desfazer Transação Pendente (undo)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-imprimir-ultimo-recibo-print_last_receipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Imprimir Último Recibo (print_last_receipt)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-consulta-de-transacao-get_transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Consulta de Transação (get_transaction)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cancelar-transacao-cancel" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Cancelar Transação (cancel)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-cancelamento-interativo-cancel_interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Cancelamento Interativo (cancel_interactive)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-impressao-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Impressão (print)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-consulta-de-relatorios-query_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Consulta de Relatórios (query_report)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-transacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Transação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Transação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-cartao-de-credito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Cartão de Crédito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-cartao-de-debito" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Cartão de Débito
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-voucher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para Voucher
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formato-dos-itens-do-pedido-orderitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato dos Itens do Pedido (OrderItems)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato dos Itens do Pedido (OrderItems)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-delimitado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato Delimitado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatos-de-string-suportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatos de String Suportados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatos de String Suportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpf-e-cnpj" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPF e CNPJ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parâmetros JSON
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-e-hora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data e Hora
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-booleanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valores Booleanos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processando-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processando Resultados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Implementação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos de Implementação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-implementacao-com-uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Implementação com URI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implementacao-com-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Implementação com Intent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processando-o-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processando o resultado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biblioteca-de-apoio-ao-desenvolvedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biblioteca de Apoio ao Desenvolvedor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biblioteca de Apoio ao Desenvolvedor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deeplinkparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeeplinkParameter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deeplinkextensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeeplinkExtensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionparameterbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      TransactionParameterBuilder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymenttypeoption-e-transactiontypeoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaymentTypeOption e TransactionTypeOption
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observações Importantes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="integracao-deeplink-sdk-unico">Integração Deeplink SDK Único<a class="headerlink" href="#integracao-deeplink-sdk-unico" title="Permanent link">&para;</a></h1>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>O PaykitDeeplink é uma interface que permite a integração e comunicação com o SDK Unico para
+processamento de pagamentos através de deeplinks. Esta documentação detalha as rotas disponíveis e
+os parâmetros aceitos para cada método de pagamento.</p>
+<h2 id="rota-base">Rota Base<a class="headerlink" href="#rota-base" title="Permanent link">&para;</a></h2>
+<p>Para chamar o PaykitDeeplink, a aplicação deve utilizar o seguinte formato de URL:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>paykit://payment
+</span></code></pre></div>
+<h2 id="tipos-de-operacoes">Tipos de Operações<a class="headerlink" href="#tipos-de-operacoes" title="Permanent link">&para;</a></h2>
+<p>O parâmetro <code>paymentType</code> determina qual tipo de operação será executada. As operações disponíveis
+são:</p>
+<ol>
+<li><a href="#1-ativacao-activate"><strong>activate</strong></a> - Ativa o terminal. <em>Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja</em></li>
+<li><a href="#2-pagamento-com-cartao-de-credito-credit"><strong>credit</strong></a> - Realiza pagamento com cartão de crédito  </li>
+<li><a href="#3-pagamento-com-cartao-de-debito-debit"><strong>debit</strong></a> - Realiza pagamento com cartão de débito  </li>
+<li><a href="#4-pagamento-com-voucher-voucher"><strong>voucher</strong></a> - Realiza pagamento com voucher/vale  </li>
+<li><a href="#5-pagamento-com-cartao-de-frota-fleet"><strong>fleet</strong></a> - Realiza pagamento com cartão de frota  </li>
+<li><a href="#6-pagamento-via-pix-pix"><strong>pix</strong></a> - Realiza pagamento via PIX  </li>
+<li><a href="#7-pagamento-via-carteira-digital-wallet"><strong>wallet</strong></a> - Realiza pagamento via carteira digital  </li>
+<li><a href="#8-pagamento-via-qr-code-qrcode"><strong>qrcode</strong></a> - Realiza pagamento via QR Code  </li>
+<li><a href="#9-confirmacao-de-transacao-pendente-confirm"><strong>confirm</strong></a> - Confirma uma transação pendente  </li>
+<li><a href="#10-desfazer-transacao-pendente-undo"><strong>undo</strong></a> - Desfaz uma transação pendente  </li>
+<li><a href="#11-imprimir-ultimo-recibo-print_last_receipt"><strong>print_last_receipt</strong></a> - Imprime o último recibo  </li>
+<li><a href="#12-consulta-de-transacao-get_transaction"><strong>get_transaction</strong></a> - Consulta detalhes de uma transação  </li>
+<li><a href="#13-cancelar-transacao-cancel"><strong>cancel</strong></a> - Cancela uma transação  </li>
+<li><a href="#14-cancelamento-interativo-cancel_interactive"><strong>cancel_interactive</strong></a> - Realiza cancelamento interativo  </li>
+<li><a href="#15-impressao-print"><strong>print</strong></a> - Imprime uma imagem  </li>
+<li><a href="#16-consulta-de-relatorios-query_report"><strong>query_report</strong></a> - Consulta relatórios</li>
+</ol>
+<h2 id="parametros-por-metodo-de-pagamento">Parâmetros por Método de Pagamento<a class="headerlink" href="#parametros-por-metodo-de-pagamento" title="Permanent link">&para;</a></h2>
+<h3 id="1-ativacao">1. Ativação<a class="headerlink" href="#1-ativacao" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>paykit://payment?paymentType=activate
+</span></code></pre></div>
+<p><em>*Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja.</em></p>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>activationCode</code>: Código de ativação fornecido pelo provedor de pagamento</li>
+<li><code>storeCnpj</code>: CNPJ do estabelecimento comercial (sem máscara)</li>
+<li><code>automationCnpj</code>: CNPJ da automação (sem máscara)</li>
+<li><code>isProduction</code>: Indicador de ambiente de produção (true/false)</li>
+<li><code>host</code>: Host para configuração do provedor de pagamento (opcional, IP ou URL)</li>
+<li><code>token</code>: Token de autenticação no provedor de pagamento (opcional)</li>
+</ul>
+<h3 id="2-pagamento-com-cartao-de-credito-credit">2. Pagamento com Cartão de Crédito (credit)<a class="headerlink" href="#2-pagamento-com-cartao-de-credito-credit" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>paykit://payment?paymentType=credit
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>installments</code>: Número de parcelas (opcional)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>cpf</code>: CPF do cliente (opcional, sem máscara)</li>
+<li><code>transactionType</code>: Tipo de transação de crédito (at_sight, installments, store_installments, etc.)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="3-pagamento-com-cartao-de-debito-debit">3. Pagamento com Cartão de Débito (debit)<a class="headerlink" href="#3-pagamento-com-cartao-de-debito-debit" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>paykit://payment?paymentType=debit
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>installments</code>: Número de parcelas (opcional)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>cpf</code>: CPF do cliente (opcional, sem máscara)</li>
+<li><code>postCreditDays</code>: Dias para pós-datamento (opcional)</li>
+<li><code>transactionType</code>: Tipo de transação de débito (at_sight, acquirer_at_sight, etc.)</li>
+<li><code>downpaymentAmount</code>: Valor de entrada (opcional)</li>
+<li><code>firstInstallmentAmount</code>: Valor da primeira parcela (opcional)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="4-pagamento-com-voucher-voucher">4. Pagamento com Voucher (voucher)<a class="headerlink" href="#4-pagamento-com-voucher-voucher" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>paykit://payment?paymentType=voucher
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>cpf</code>: CPF do cliente (opcional, sem máscara)</li>
+<li><code>transactionType</code>: Tipo de voucher (food, meal, automotive, culture, benefits, etc.)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="5-pagamento-com-cartao-de-frota-fleet">5. Pagamento com Cartão de Frota (fleet)<a class="headerlink" href="#5-pagamento-com-cartao-de-frota-fleet" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>paykit://payment?paymentType=fleet
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>cpf</code>: CPF do cliente (opcional, sem máscara)</li>
+<li><code>providerParams</code>: Parâmetros específicos do provedor (JSON codificado para URL)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="6-pagamento-via-pix-pix">6. Pagamento via PIX (pix)<a class="headerlink" href="#6-pagamento-via-pix-pix" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>paykit://payment?paymentType=pix
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>providerParams</code>: Parâmetros específicos do provedor (JSON codificado para URL)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="7-pagamento-via-carteira-digital-wallet">7. Pagamento via Carteira Digital (wallet)<a class="headerlink" href="#7-pagamento-via-carteira-digital-wallet" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>paykit://payment?paymentType=wallet
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>providerParams</code>: Parâmetros específicos do provedor (JSON codificado para URL)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="8-pagamento-via-qr-code-qrcode">8. Pagamento via QR Code (qrcode)<a class="headerlink" href="#8-pagamento-via-qr-code-qrcode" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>paykit://payment?paymentType=qrcode
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>billOfSale</code>: Referência do pedido/venda</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>providerParams</code>: Parâmetros específicos do provedor (JSON codificado para URL)</li>
+<li><code>orderItems</code>: Lista de itens do pedido (opcional, formato JSON ou delimitado)</li>
+</ul>
+<h3 id="9-confirmacao-de-transacao-pendente-confirm">9. Confirmação de Transação Pendente (confirm)<a class="headerlink" href="#9-confirmacao-de-transacao-pendente-confirm" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>paykit://payment?paymentType=confirm
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>transactionId</code>: ID da transação a ser confirmada</li>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>finalizeTransaction</code>: Indicador para finalizar a transação (true/false)</li>
+</ul>
+<h3 id="10-desfazer-transacao-pendente-undo">10. Desfazer Transação Pendente (undo)<a class="headerlink" href="#10-desfazer-transacao-pendente-undo" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>paykit://payment?paymentType=undo
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>transactionId</code>: ID da transação a ser desfeita</li>
+<li><code>amount</code>: Valor da transação (pode ser informado como valor inteiro em centavos, ex: "1000" para
+  R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>finalizeTransaction</code>: Indicador para finalizar a transação (true/false)</li>
+</ul>
+<h3 id="11-imprimir-ultimo-recibo-print_last_receipt">11. Imprimir Último Recibo (print_last_receipt)<a class="headerlink" href="#11-imprimir-ultimo-recibo-print_last_receipt" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>paykit://payment?paymentType=print_last_receipt
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>receiptType</code>: Tipo de recibo a ser impresso (merchant, customer, both)</li>
+</ul>
+<h3 id="12-consulta-de-transacao-get_transaction">12. Consulta de Transação (get_transaction)<a class="headerlink" href="#12-consulta-de-transacao-get_transaction" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>paykit://payment?paymentType=get_transaction
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>transactionId</code>: ID da transação a ser consultada</li>
+<li><code>externalId</code>: ID externo da transação (opcional)</li>
+</ul>
+<h3 id="13-cancelar-transacao-cancel">13. Cancelar Transação (cancel)<a class="headerlink" href="#13-cancelar-transacao-cancel" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>paykit://payment?paymentType=cancel
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>transactionId</code>: ID da transação (paymentId)</li>
+<li><code>amount</code>: Valor a ser cancelado (pode ser informado como valor inteiro em centavos, ex: "1000"
+  para R$ 10,00, ou como valor decimal com ponto, ex: "10.25" para R$ 10,25)</li>
+<li><code>autoPrintReceipt</code>: Indicador para imprimir recibo (true/false)</li>
+<li><code>printMerchantReceipt</code>: Indicador para imprimir recibo do lojista (true/false)</li>
+<li><code>autoConfirm</code>: Indicador para confirmação automática (true/false)</li>
+<li><code>externalId</code>: ID externo para identificação da transação</li>
+<li><code>dateTimeOfSale</code>: Data/hora da venda original (timestamp em milissegundos)</li>
+</ul>
+<h3 id="14-cancelamento-interativo-cancel_interactive">14. Cancelamento Interativo (cancel_interactive)<a class="headerlink" href="#14-cancelamento-interativo-cancel_interactive" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>paykit://payment?paymentType=cancel_interactive
+</span></code></pre></div>
+<p>Não requer parâmetros adicionais, inicia a interface de cancelamento interativo.</p>
+<h3 id="15-impressao-print">15. Impressão (print)<a class="headerlink" href="#15-impressao-print" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>paykit://payment?paymentType=print
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>bitmap</code>: Imagem a ser impressa (codificada em base64)</li>
+</ul>
+<p><strong>Observações sobre o parâmetro bitmap:</strong></p>
+<p>A imagem para impressão deve ser enviada como uma string codificada em base64. O sistema processa o parâmetro <code>bitmap</code> da seguinte forma:</p>
+<ol>
+<li>Extrai o valor do parâmetro <code>bitmap</code> da URL ou dos extras do Intent</li>
+<li>Decodifica a string base64 para um array de bytes usando <code>Base64.decode()</code></li>
+<li>Converte o array de bytes para um objeto Bitmap usando <code>BitmapFactory.decodeByteArray()</code></li>
+</ol>
+<p><strong>Limitações importantes:</strong></p>
+<ul>
+<li>Os deeplinks têm um limite de tamanho de aproximadamente 2000 caracteres em muitos navegadores e sistemas</li>
+<li>Considerando a codificação base64 (que aumenta o tamanho em aproximadamente 33%), recomenda-se que a imagem original não ultrapasse 1.5 MB</li>
+<li>Intents do Android também têm um limite de aproximadamente 500KB para extras, portanto é necessário comprimir adequadamente as imagens</li>
+<li>A impressora térmica do terminal tem uma largura limitada (geralmente 384 pixels), então imagens muito grandes serão redimensionadas</li>
+</ul>
+<p><strong>Exemplo de codificação:</strong></p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// Converte um bitmap para string base64</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">bitmapToBase64</span><span class="p">(</span><span class="n">bitmap</span><span class="p">:</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">):</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">byteArrayOutputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteArrayOutputStream</span><span class="p">()</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="c1">// Use PNG para imagens com transparência ou JPEG para fotos</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="c1">// O último parâmetro (0-100) define a qualidade da compressão para JPEG</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="n">bitmap</span><span class="p">.</span><span class="na">compress</span><span class="p">(</span><span class="n">Bitmap</span><span class="p">.</span><span class="na">CompressFormat</span><span class="p">.</span><span class="na">PNG</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">byteArrayOutputStream</span><span class="p">)</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">byteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">byteArrayOutputStream</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">()</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">encodeToString</span><span class="p">(</span><span class="n">byteArray</span><span class="p">,</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">// Opcionalmente, redimensione a imagem antes da codificação</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">resizeBitmap</span><span class="p">(</span><span class="n">originalBitmap</span><span class="p">:</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">,</span><span class="w"> </span><span class="n">maxWidthInPixels</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">384</span><span class="p">):</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">originalBitmap</span><span class="p">.</span><span class="na">width</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">maxWidthInPixels</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">originalBitmap</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxWidthInPixels</span><span class="p">.</span><span class="na">toFloat</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">originalBitmap</span><span class="p">.</span><span class="na">width</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">newHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">originalBitmap</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ratio</span><span class="p">).</span><span class="na">toInt</span><span class="p">()</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">.</span><span class="na">createScaledBitmap</span><span class="p">(</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">        </span><span class="n">originalBitmap</span><span class="p">,</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span><span class="n">maxWidthInPixels</span><span class="p">,</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">        </span><span class="n">newHeight</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">        </span><span class="kc">true</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="p">)</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="p">}</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="c1">// Uso no deeplink</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="kd">val</span><span class="w"> </span><span class="nv">resizedBitmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resizeBitmap</span><span class="p">(</span><span class="n">myBitmap</span><span class="p">)</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="kd">val</span><span class="w"> </span><span class="nv">base64Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitmapToBase64</span><span class="p">(</span><span class="n">resizedBitmap</span><span class="p">)</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="kd">val</span><span class="w"> </span><span class="nv">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;paykit://payment&quot;</span><span class="p">)</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="p">.</span><span class="na">buildUpon</span><span class="p">()</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;paymentType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;print&quot;</span><span class="p">)</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;bitmap&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base64Image</span><span class="p">)</span>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span></code></pre></div>
+<p><strong>Recomendações:</strong></p>
+<ul>
+<li>Use um formato de imagem compacto (como PNG) antes da codificação em base64</li>
+<li>Redimensione a imagem para a largura da impressora (geralmente 384 pixels)</li>
+<li>Converta imagens coloridas para escala de cinza quando possível para melhorar a impressão térmica</li>
+<li>Teste a impressão com diferentes resoluções para garantir compatibilidade com a impressora do terminal</li>
+<li>Para imagens maiores, considere usar o método de Intent com extras em vez de deeplink na URL</li>
+</ul>
+<h3 id="16-consulta-de-relatorios-query_report">16. Consulta de Relatórios (query_report)<a class="headerlink" href="#16-consulta-de-relatorios-query_report" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>paykit://payment?paymentType=query_report
+</span></code></pre></div>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>providerParams</code>: Parâmetros específicos do provedor para consulta (JSON codificado para URL)</li>
+</ul>
+<h2 id="tipos-de-transacao">Tipos de Transação<a class="headerlink" href="#tipos-de-transacao" title="Permanent link">&para;</a></h2>
+<p>O parâmetro <code>transactionType</code> pode variar de acordo com o método de pagamento. Valores possíveis:</p>
+<h3 id="para-cartao-de-credito">Para Cartão de Crédito<a class="headerlink" href="#para-cartao-de-credito" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>at_sight</code>: À vista</li>
+<li><code>installments</code>: Parcelado genérico</li>
+<li><code>store_installments</code>: Parcelado loja</li>
+<li><code>admin_installments</code>: Parcelado administradora</li>
+<li><code>bank_installments</code>: Parcelado banco</li>
+<li><code>issuer_installments</code>: Parcelado emissor</li>
+<li><code>pre_authorization</code>: Pré-autorização</li>
+<li><code>financing</code>: Financiamento</li>
+<li><code>credit_1_minute</code>: Crédito em 1 minuto</li>
+</ul>
+<h3 id="para-cartao-de-debito">Para Cartão de Débito<a class="headerlink" href="#para-cartao-de-debito" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>at_sight</code>: À vista</li>
+<li><code>acquirer_at_sight</code>: À vista pela adquirente</li>
+<li><code>with_instalments</code>: Com parcelamento</li>
+<li><code>invoice_payment</code>: Pagamento de fatura</li>
+<li><code>postdated</code>: Pós-datado</li>
+</ul>
+<h3 id="para-voucher">Para Voucher<a class="headerlink" href="#para-voucher" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>food</code>: Alimentação</li>
+<li><code>meal</code>: Refeição</li>
+<li><code>automotive</code>: Automotivo</li>
+<li><code>culture</code>: Cultura</li>
+<li><code>toll</code>: Pedágio</li>
+<li><code>benefits</code>: Benefícios</li>
+<li><code>automobile</code>: Automóvel</li>
+</ul>
+<h2 id="formato-dos-itens-do-pedido-orderitems">Formato dos Itens do Pedido (OrderItems)<a class="headerlink" href="#formato-dos-itens-do-pedido-orderitems" title="Permanent link">&para;</a></h2>
+<p>O parâmetro <code>orderItems</code> pode ser informado em dois formatos:</p>
+<h3 id="formato-json">Formato JSON<a class="headerlink" href="#formato-json" title="Permanent link">&para;</a></h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">[</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">&quot;sku&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Produto 1&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nt">&quot;unityOfMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UN&quot;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="nt">&quot;sku&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;456&quot;</span><span class="p">,</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Produto 2&quot;</span><span class="p">,</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">    </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="nt">&quot;unityOfMeasure&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UN&quot;</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Importante</strong>: O JSON deve ser codificado para URL.
+Exemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>orderItems=%5B%7B%22sku%22%3A%22123%22%2C%22name%22%3A%22Produto%201%22%2C%22value%22%3A1000%2C%22quantity%22%3A1%2C%22unityOfMeasure%22%3A%22UN%22%7D%5D
+</span></code></pre></div>
+<h3 id="formato-delimitado">Formato Delimitado<a class="headerlink" href="#formato-delimitado" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>123|Produto 1|1000|1|UN;456|Produto 2|2000|2|UN
+</span></code></pre></div>
+<p><strong>Importante</strong>: O texto delimitado deve ser codificado para URL.
+Exemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>orderItems=123%7CProduto%201%7C1000%7C1%7CUN%3B456%7CProduto%202%7C2000%7C2%7CUN
+</span></code></pre></div>
+<p>Formato: <code>sku|nome|valor|quantidade|unidadeMedida</code><br />
+Separador de itens: <code>;</code><br />
+Separador de campos: <code>|</code></p>
+<h2 id="formatos-de-string-suportados">Formatos de String Suportados<a class="headerlink" href="#formatos-de-string-suportados" title="Permanent link">&para;</a></h2>
+<h3 id="cpf-e-cnpj">CPF e CNPJ<a class="headerlink" href="#cpf-e-cnpj" title="Permanent link">&para;</a></h3>
+<p>Os parâmetros <code>cpf</code>, <code>storeCnpj</code> e <code>automationCnpj</code> devem ser informados sem máscara ou caracteres
+especiais.</p>
+<p><strong>Exemplos corretos:</strong></p>
+<ul>
+<li>CPF: <code>12345678909</code></li>
+<li>CNPJ: <code>12345678000123</code></li>
+</ul>
+<p><strong>Exemplos incorretos:</strong></p>
+<ul>
+<li>CPF: <code>123.456.789-09</code></li>
+<li>CNPJ: <code>12.345.678/0001-23</code></li>
+</ul>
+<h3 id="host">Host<a class="headerlink" href="#host" title="Permanent link">&para;</a></h3>
+<p>O parâmetro <code>host</code> aceita tanto endereços IP quanto URLs.</p>
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>IP: <code>192.168.0.1</code></li>
+<li>URL: <code>https://api.pagamento.com.br</code></li>
+</ul>
+<h3 id="parametros-json">Parâmetros JSON<a class="headerlink" href="#parametros-json" title="Permanent link">&para;</a></h3>
+<p>Os parâmetros que utilizam formato JSON (<code>providerParams</code>, <code>orderItems</code>) devem ser codificados
+adequadamente para URLs.</p>
+<p><strong>Exemplo correto:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>providerParams={&quot;terminal_id&quot;:&quot;12345&quot;,&quot;merchant_id&quot;:&quot;67890&quot;}
+</span></code></pre></div>
+<p><strong>Codificado para URL:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>providerParams=%7B%22terminal_id%22%3A%2212345%22%2C%22merchant_id%22%3A%2267890%22%7D
+</span></code></pre></div>
+<p><strong>Observação importante sobre JSON e URL-encoding:</strong>
+Quando uma URL com parâmetros JSON é processada pelo Android, o sistema automaticamente faz o
+URL-decode antes de disponibilizar os valores. Por isso, é essencial que você faça o URL-encode
+correto do JSON ao construir a URL de deeplink, caso contrário, caracteres especiais como <code>{</code>,
+<code>}</code>, <code>"</code>, <code>:</code> podem quebrar a formação da URL ou o parseamento do JSON.</p>
+<p>Para <code>orderItems</code>, o sistema tenta primeiro o parseamento como JSON, e se falhar, tenta o formato
+delimitado.</p>
+<h3 id="data-e-hora">Data e Hora<a class="headerlink" href="#data-e-hora" title="Permanent link">&para;</a></h3>
+<p>O parâmetro <code>dateTimeOfSale</code> deve ser informado como timestamp em milissegundos.</p>
+<p><strong>Exemplo:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>dateTimeOfSale=1717401600000
+</span></code></pre></div>
+<h3 id="valores-booleanos">Valores Booleanos<a class="headerlink" href="#valores-booleanos" title="Permanent link">&para;</a></h3>
+<p>Parâmetros como <code>autoPrintReceipt</code>, <code>printMerchantReceipt</code>, <code>autoConfirm</code>, <code>finalizeTransaction</code> e <code>isProduction</code>
+aceitam valores <code>"true"</code> ou <code>"false"</code> como strings.</p>
+<p><strong>Exemplos:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>autoPrintReceipt=true
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>autoConfirm=false
+</span></code></pre></div>
+<h2 id="processando-resultados">Processando Resultados<a class="headerlink" href="#processando-resultados" title="Permanent link">&para;</a></h2>
+<p>Após a operação ser concluída, o PaykitDeeplink retorna um resultado que pode ser processado pela
+aplicação que originou a chamada. Os resultados são fornecidos como extras em um Intent, onde a
+chave é <code>result</code>.</p>
+<p>Dependendo do tipo de operação, o resultado pode conter:</p>
+<ul>
+<li><strong>PaymentResult</strong> - Para operações de pagamento (crédito, débito, voucher, etc.)</li>
+<li><strong>ActivationResult</strong> - Para operações de ativação</li>
+<li><strong>CancelResult</strong> - Para operações de cancelamento</li>
+<li><strong>TransactionQueryResult</strong> - Para consultas de transação</li>
+<li><strong>PrintResult</strong> - Para operações de impressão</li>
+<li><strong>QueryReportResult</strong> - Para consultas de relatórios</li>
+<li><strong>Boolean</strong> - Para operações de confirmação/desfazer transação pendente</li>
+</ul>
+<h2 id="exemplos-de-implementacao">Exemplos de Implementação<a class="headerlink" href="#exemplos-de-implementacao" title="Permanent link">&para;</a></h2>
+<h3 id="1-implementacao-com-uri">1. Implementação com URI<a class="headerlink" href="#1-implementacao-com-uri" title="Permanent link">&para;</a></h3>
+<p>Para implementar a chamada de um deeplink para pagamento com cartão de crédito usando URI:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;paykit://payment&quot;</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p">.</span><span class="na">buildUpon</span><span class="p">()</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;paymentType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;credit&quot;</span><span class="p">)</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1000&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// R$ 10,00</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;billOfSale&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PEDIDO123&quot;</span><span class="p">)</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;installments&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="p">.</span><span class="na">appendQueryParameter</span><span class="p">(</span><span class="s">&quot;autoPrintReceipt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">,</span><span class="w"> </span><span class="n">uri</span><span class="p">)</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">REQUEST_CODE_PAYMENT</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="2-implementacao-com-intent">2. Implementação com Intent<a class="headerlink" href="#2-implementacao-com-intent" title="Permanent link">&para;</a></h3>
+<p>Alternativamente, você pode implementar usando diretamente o Intent com extras:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">intent</span><span class="p">.</span><span class="na">setPackage</span><span class="p">(</span><span class="s">&quot;com.linx.paykit.example&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// Pacote da aplicação de pagamento</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">intent</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;paykit://payment&quot;</span><span class="p">))</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;paymentType&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;credit&quot;</span><span class="p">)</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1000&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// R$ 10,00</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;billOfSale&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PEDIDO123&quot;</span><span class="p">)</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;installments&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;autoPrintReceipt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">)</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="n">startActivityForResult</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span><span class="w"> </span><span class="n">REQUEST_CODE_PAYMENT</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="processando-o-resultado">Processando o resultado:<a class="headerlink" href="#processando-o-resultado" title="Permanent link">&para;</a></h3>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">resultCode</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="n">Intent?)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="na">onActivityResult</span><span class="p">(</span><span class="n">requestCode</span><span class="p">,</span><span class="w"> </span><span class="n">resultCode</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">requestCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">REQUEST_CODE_PAYMENT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">resultCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Activity</span><span class="p">.</span><span class="na">RESULT_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="o">?.</span><span class="na">getParcelableExtra</span><span class="o">&lt;</span><span class="n">ParcelablePaymentResult</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;result&quot;</span><span class="p">)</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">        </span><span class="c1">// Processar o resultado da transação</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">        </span><span class="c1">// Você pode obter dados de pagamento como:</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">transactionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="na">paymentResult</span><span class="o">?.</span><span class="na">id</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="na">paymentResult</span><span class="o">?.</span><span class="na">amount</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="na">paymentResult</span><span class="o">?.</span><span class="na">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TransactionStatus</span><span class="p">.</span><span class="na">COMPLETED</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">        </span><span class="c1">// ... outros dados conforme necessário</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="biblioteca-de-apoio-ao-desenvolvedor">Biblioteca de Apoio ao Desenvolvedor<a class="headerlink" href="#biblioteca-de-apoio-ao-desenvolvedor" title="Permanent link">&para;</a></h2>
+<p>O SDK disponibiliza classes auxiliares na biblioteca <code>com.linx.paykit.common.deeplink.parameters</code> no pacote <code>SDKPayServices.common</code> para facilitar a integração com o PaykitDeeplink. Estas classes fornecem abstrações que simplificam o processo de construção e processamento de parâmetros.</p>
+<h3 id="deeplinkparameter">DeeplinkParameter<a class="headerlink" href="#deeplinkparameter" title="Permanent link">&para;</a></h3>
+<p>A classe <code>DeeplinkParameter</code> contém todas as definições dos parâmetros suportados como uma enumeração, o que facilita a consistência na nomeação dos parâmetros:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">enum</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">DeeplinkParameter</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">key</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="n">SCHEME</span><span class="p">(</span><span class="s">&quot;scheme&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;paykit&quot;</span><span class="p">),</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="n">AUTOMATION_CNPJ</span><span class="p">(</span><span class="s">&quot;automationCnpj&quot;</span><span class="p">),</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="n">STORE_CNPJ</span><span class="p">(</span><span class="s">&quot;storeCnpj&quot;</span><span class="p">),</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="n">ACTIVATION_CODE</span><span class="p">(</span><span class="s">&quot;activationCode&quot;</span><span class="p">),</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="n">HOST</span><span class="p">(</span><span class="s">&quot;host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;payment&quot;</span><span class="p">),</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="c1">// ... outros parâmetros</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Usando esta enumeração, você pode referenciar os parâmetros de forma segura para evitar erros de digitação:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">DeeplinkParameter</span><span class="p">.</span><span class="na">AMOUNT</span><span class="p">.</span><span class="na">key</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;10.50&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="deeplinkextensions">DeeplinkExtensions<a class="headerlink" href="#deeplinkextensions" title="Permanent link">&para;</a></h3>
+<p>A classe <code>DeeplinkExtensions</code> fornece métodos de extensão para facilitar a extração e processamento de parâmetros de um Intent:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">// Exemplo de uso dos métodos de extensão</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extractAmount</span><span class="p">()</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="kd">val</span><span class="w"> </span><span class="nv">cpf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extractCpf</span><span class="p">()</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="kd">val</span><span class="w"> </span><span class="nv">providerParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extractProviderParams</span><span class="p">()</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="kd">val</span><span class="w"> </span><span class="nv">orderItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">extractOrderItems</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Estes métodos já realizam conversões de tipos e tratamento de nulos, economizando código e reduzindo erros:</p>
+<ul>
+<li><code>extractAmount()</code>: Converte a string para BigDecimal</li>
+<li><code>extractInstallments()</code>: Converte a string para Int</li>
+<li><code>extractDateTimeOfSale()</code>: Converte a string timestamp para Date</li>
+<li><code>extractProviderParams()</code>: Converte a string JSON para JSONObject</li>
+<li><code>extractOrderItems()</code>: Suporta parsing de formato JSON ou delimitado</li>
+</ul>
+<h3 id="transactionparameterbuilder">TransactionParameterBuilder<a class="headerlink" href="#transactionparameterbuilder" title="Permanent link">&para;</a></h3>
+<p>Para construir os parâmetros de transação necessários, o SDK fornece a classe <code>TransactionParameterBuilder</code>, que permite criar facilmente diferentes tipos de parâmetros:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">// Criando parâmetros a partir de um Intent</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransactionParameterBuilder</span><span class="p">.</span><span class="na">fromUri</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1">// Construindo diferentes tipos de parâmetros</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="kd">val</span><span class="w"> </span><span class="nv">creditParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">buildCreditParameters</span><span class="p">()</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="kd">val</span><span class="w"> </span><span class="nv">debitParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">buildDebitParameters</span><span class="p">()</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="kd">val</span><span class="w"> </span><span class="nv">cancelParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">buildCancelParameter</span><span class="p">()</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1">// Ou usando método genérico</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="kd">val</span><span class="w"> </span><span class="nv">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="na">build</span><span class="o">&lt;</span><span class="n">CreditParameters</span><span class="o">&gt;</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Esta classe simplifica a construção de parâmetros para diferentes tipos de transações, extraindo automaticamente os valores do Intent e aplicando as conversões necessárias.</p>
+<h3 id="paymenttypeoption-e-transactiontypeoption">PaymentTypeOption e TransactionTypeOption<a class="headerlink" href="#paymenttypeoption-e-transactiontypeoption" title="Permanent link">&para;</a></h3>
+<p>As classes <code>PaymentTypeOption</code> e <code>TransactionTypeOption</code> oferecem abstrações seguras para trabalhar com tipos de pagamento e transação:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">// Convertendo string para PaymentTypeOption</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">paymentTypeOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentTypeOption</span><span class="p">.</span><span class="na">fromString</span><span class="p">(</span><span class="s">&quot;credit&quot;</span><span class="p">)</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="c1">// Convertendo string para TransactionTypeOption</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="kd">val</span><span class="w"> </span><span class="nv">transactionTypeOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransactionTypeOption</span><span class="p">.</span><span class="na">fromString</span><span class="p">(</span><span class="s">&quot;at_sight&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Estas classes já tratam a conversão de nomes de constantes para os enums correspondentes, incluindo normalização de caixa (lowercase).</p>
+<p>Usando essas classes auxiliares, você pode construir integrações mais robustas e com menos código, reduzindo significativamente a possibilidade de erros em tempo de execução.</p>
+<h2 id="observacoes-importantes">Observações Importantes<a class="headerlink" href="#observacoes-importantes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Todos os valores monetários podem ser fornecidos como valores inteiros em centavos (ex: "1000"
+   para R$ 10,00) ou como valores decimais com ponto (ex: "10.25" para R$ 10,25).</li>
+<li>Se o parâmetro <code>installments</code> não for informado ou for inválido, o sistema utilizará o valor
+   configurado pela adquirente ou o comportamento padrão definido pelo provedor de pagamento.</li>
+<li>Para parâmetros do tipo JSON (<code>providerParams</code>, <code>orderItems</code>), utilize a codificação adequada
+   para URLs.</li>
+<li>Verifique com o provedor de pagamento quais são os parâmetros específicos exigidos.</li>
+<li>O parâmetro <code>transactionType</code> pode variar dependendo do <code>paymentType</code> selecionado.</li>
+<li>Os itens do pedido podem ser enviados em formato JSON ou em formato delimitado.</li>
+<li>Alguns tipos de operação podem não estar disponíveis, dependendo da configuração do SDK.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../transactions/localizar-transacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Localizar transação">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Localizar transação
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../releases/" class="md-footer__link md-footer__link--next" aria-label="Próximo: O que há de novo?">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                O que há de novo?
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://gabrieldavid5.github.io/sdkunico/"  target="_blank" rel="noopener">Linx Cross</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+  
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  <script src="../assets/javascripts/custom.058c863c.min.js"></script>
+
+  </body>
+</html>
