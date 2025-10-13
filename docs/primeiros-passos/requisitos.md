@@ -62,4 +62,6 @@ Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua d
 - "✔️" indica que a adquirente possui Deeplink.
 - "❌" indica que a adquirente não possui Deeplink.
 
-*** - Usa o SiTef. A versão indicada é a versão do mSiTef
+*** - Usa o SiTef. A versão indicada é a versão do mSiTef.
+
+*** - Adyen não possui suporte a impressão limitada. Verifique os métodos suportados.

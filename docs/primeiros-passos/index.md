@@ -25,7 +25,7 @@ A seguinte tabela resume as operações disponíveis para cada SDK de adquirente
 | Wallet     |  ✔️       |   ❌  |   ❌  |       ❌    |   ❌    |   ❌  |   ❌  |   ✔️   |   ❌    |   ❌     |
 | Frotas |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |   ❌     |
 | Cancelar   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
-| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
+| Imprimir   |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ❌   |   ✔️   |   ✔️     |   ✔️     |
 | Reimprimir |  ✔️        |   ✔️   |   ✔️   |       ✔️     |   ✔️     |   ✔️   |   ✔️   |   ✔️   |   ✔️     |   ✔️     |
 | Localizar transação |  ✔️        |   ❌   |   ❌   |       ❌     |   ❌     |   ❌   |   ❌   |   ❌   |   ❌     |   ❌     |
 
