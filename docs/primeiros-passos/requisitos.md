@@ -64,4 +64,4 @@ Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua d
 
 *** - Usa o SiTef. A versão indicada é a versão do mSiTef.
 
-*** - Adyen não possui suporte a impressão limitada. Verifique os métodos suportados.
+*** - A Adyen possui suporte limitado à impressão; verifique os métodos suportados.
