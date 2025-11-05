@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronRight, UserPlus, BookOpen, Code, Rocket, Package, CreditCard, Link2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -55,7 +56,7 @@ const DevCenter = () => {
             <h1 className="text-xl font-bold gradient-text">Documentação SDK Único</h1>
           </div>
           <Button variant="outline" asChild>
-            <a href="/">Voltar ao Início</a>
+            <Link to="/">Voltar ao Início</Link>
           </Button>
         </div>
       </header>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DemoModal } from "@/components/DemoModal";
 import heroImage from "@/assets/hero-image.jpg";
@@ -47,10 +48,10 @@ export const Hero = () => {
                 className="bg-accent hover:bg-accent/90 text-white shadow-glow transition-smooth group font-semibold"
                 asChild
               >
-                <a href="/devcenter">
+                <Link to="/devcenter">
                   Começar Agora
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
-                </a>
+                </Link>
               </Button>
               <Button 
                 size="lg" 
