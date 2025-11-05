@@ -129,6 +129,57 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
+
+  /* Inline code styling - Enhanced visibility */
+  code {
+    @apply px-2 py-0.5 rounded-md text-sm font-mono font-semibold;
+    background: linear-gradient(135deg, hsl(210 35% 20%) 0%, hsl(210 40% 22%) 100%);
+    color: hsl(170 60% 65%);
+    border: 1px solid hsl(210 30% 30%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  code:hover {
+    background: linear-gradient(135deg, hsl(210 35% 22%) 0%, hsl(210 40% 24%) 100%);
+    border-color: hsl(170 50% 40%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Code with specific color classes */
+  code.text-primary {
+    color: hsl(210 70% 65%);
+  }
+
+  code.text-accent {
+    color: hsl(170 60% 65%);
+  }
+
+  .dark code {
+    background: linear-gradient(135deg, hsl(210 40% 18%) 0%, hsl(210 45% 20%) 100%);
+    color: hsl(170 60% 70%);
+    border: 1px solid hsl(210 35% 28%);
+  }
+
+  .dark code:hover {
+    background: linear-gradient(135deg, hsl(210 40% 20%) 0%, hsl(210 45% 22%) 100%);
+    border-color: hsl(170 50% 45%);
+  }
+
+  /* Ensure code inside pre doesn't get inline styles */
+  pre code {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    font-weight: normal !important;
+  }
+
+  pre code:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 }
 
 @layer utilities {

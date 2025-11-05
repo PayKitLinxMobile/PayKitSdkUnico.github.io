@@ -4,6 +4,7 @@ import { Menu, X, ChevronRight, UserPlus, BookOpen, Code, Rocket, Package, Credi
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CodeBlock from "@/components/CodeBlock";
 import visaoSolucao from "@/assets/visao-solucao.png";
 import sunmiP2 from "@/assets/terminals/Model_Sunmi_P2.png";
 import ingenicoA8 from "@/assets/terminals/Model_Ingenico_APOS_A8.webp";
@@ -35,6 +36,7 @@ import gertecGs300 from "@/assets/terminals/Model_Gertec_GS300.png";
 import gertecSk210 from "@/assets/terminals/Model_Gertec_SK210.png";
 import elginMk15 from "@/assets/terminals/Model_Elgin_MK15.png";
 import elginM10Pro from "@/assets/terminals/Model_Elgin_M10-PRO.png";
+import tectoyP3 from "@/assets/terminals/Model_Tectoy_P3.png";
 
 const DevCenter = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -192,24 +194,27 @@ const DevCenter = () => {
             <div className="card p-8 mb-8 shadow-card">
               <h3 className="text-2xl font-bold mb-4">Passo 1 - Configurar o projeto</h3>
               <p className="text-muted-foreground mb-4">
-                Adicione esta seção ao seu arquivo <code className="bg-accent px-2 py-1 rounded">settings.gradle.kts</code> nos blocos <code className="bg-accent px-2 py-1 rounded">repositories</code>.
+                Adicione esta seção ao seu arquivo <code>settings.gradle.kts</code> nos blocos <code>repositories</code>.
               </p>
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto mb-4">
-                <code>{`maven{
+              <CodeBlock 
+                language="kotlin"
+                code={`maven{
     name="SDK_UNICO"
     url= uri("https://pkgs.dev.azure.com/stndtef/SmartPOS/_packaging/SDK_UNICO/maven/v1")
     credentials{
         username = stndtef
         password = {PERSONAL_ACCESS_TOKEN}
     }
-}`}</code>
-              </pre>
+}`}
+                className="mb-4"
+              />
               
               <p className="text-muted-foreground mb-4">
-                Adicione a flavor da adquirente ao <code className="bg-accent px-2 py-1 rounded">build.gradle.kts</code>, no bloco <code className="bg-accent px-2 py-1 rounded">android</code> para seleção da adquirente no SDK Único.
+                Adicione a flavor da adquirente ao <code>build.gradle.kts</code>, no bloco <code>android</code> para seleção da adquirente no SDK Único.
               </p>
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
-                <code>{`val flavors = setOf(
+              <CodeBlock 
+                language="kotlin"
+                code={`val flavors = setOf(
     "stone" to 22,
     "linxtef" to 22,
     "pagseguro" to 23,
@@ -232,8 +237,8 @@ android {
             }
         }
     }
-}`}</code>
-              </pre>
+}`}
+              />
               
               <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mt-4 mb-4">
                 <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
@@ -257,22 +262,24 @@ android {
               <p className="text-muted-foreground mb-4">
                 Adicionar as seguintes dependências necessárias:
               </p>
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
-                <code>{`val sdkPayServicesVersion = "0.0.000169"
+              <CodeBlock 
+                language="kotlin"
+                code={`val sdkPayServicesVersion = "0.0.000169"
 
 implementation("SDKPayServices:core:$sdkPayServicesVersion")
 implementation("SDKPayServices:config:$sdkPayServicesVersion")
-implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
-              </pre>
+implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
+              />
             </div>
 
             <div className="card p-8 mb-8 shadow-card">
               <h3 className="text-2xl font-bold mb-4">Passo 3 - Verificar as permissões necessárias</h3>
               <p className="text-muted-foreground mb-4">
-                Adicione as seguintes permissões ao seu arquivo <code className="bg-accent px-2 py-1 rounded">AndroidManifest.xml</code>:
+                Adicione as seguintes permissões ao seu arquivo <code>AndroidManifest.xml</code>:
               </p>
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
-                <code>{`<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              <CodeBlock 
+                language="xml"
+                code={`<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.seuapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -287,8 +294,8 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
     <uses-permission android:name="android.permission.READ_OWNER_DATA"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     ...
-</manifest>`}</code>
-              </pre>
+</manifest>`}
+              />
             </div>
 
             <div className="card p-8 mb-8 shadow-card">
@@ -304,15 +311,17 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
               </p>
               
               <h4 className="text-xl font-bold mb-3 mt-6">Referências de bibliotecas</h4>
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto mb-6">
-                <code>{`val sdkPayServicesVersion = "1.0.1.18662"
+              <CodeBlock 
+                language="kotlin"
+                code={`val sdkPayServicesVersion = "1.0.1.18662"
 val adquirente = "stone"
 
 implementation("SDKPayServices:core-$adquirente:$sdkPayServicesVersion")
 implementation("SDKPayServices:$adquirente:$sdkPayServicesVersion")
 implementation("SDKPayServices:config:$sdkPayServicesVersion")
-implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
-              </pre>
+implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
+                className="mb-6"
+              />
 
               <h4 className="text-xl font-bold mb-3">Lista de dependências</h4>
               <div className="overflow-x-auto">
@@ -356,7 +365,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
             <div className="card p-8 shadow-card">
               <h3 className="text-2xl font-bold mb-4">Interface Paykit</h3>
               <p className="text-muted-foreground mb-6">
-                A interface <code className="bg-accent px-2 py-1 rounded">Paykit</code> define os métodos que cada adquirente deve implementar para realizar transações de pagamento.
+                A interface <code>Paykit</code> define os métodos que cada adquirente deve implementar para realizar transações de pagamento.
               </p>
               
               <h4 className="text-xl font-bold mb-4">Métodos</h4>
@@ -391,8 +400,8 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
                       <tr key={row.method} className="border-b hover:bg-accent/50 transition-smooth">
                         <td className="p-3"><code className="text-primary font-semibold">{row.method}</code></td>
                         <td className="p-3 text-sm">{row.desc}</td>
-                        <td className="p-3 text-sm"><code className="bg-accent px-2 py-1 rounded">{row.params}</code></td>
-                        <td className="p-3 text-sm"><code className="bg-accent px-2 py-1 rounded">{row.return}</code></td>
+                        <td className="p-3 text-sm"><code>{row.params}</code></td>
+                        <td className="p-3 text-sm"><code>{row.return}</code></td>
                       </tr>
                     ))}
                   </tbody>
@@ -414,7 +423,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
                 O SDK único, em sua definição, simplifica a integração com os SDKs das adquirentes, a partir de sua interface única.
               </p>
               <p className="text-muted-foreground mb-4">
-                Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de configuração do SDK Único. E seu <code className="bg-accent px-2 py-1 rounded">PaykitId</code> que será necessário para ativar o SDK Único.
+                Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de configuração do SDK Único. E seu <code>PaykitId</code> que será necessário para ativar o SDK Único.
               </p>
               
               <h4 className="text-xl font-bold mb-3 mt-6">PaykitId e Credenciamento</h4>
@@ -429,8 +438,9 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}</code>
                 </p>
               </div>
 
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
-                <code>{`import android.util.Log
+              <CodeBlock 
+                language="kotlin"
+                code={`import android.util.Log
 import com.linx.paykit.common.Callback
 import com.linx.paykit.common.activation.ActivationParameters
 import com.linx.paykit.common.activation.ActivationResult
@@ -453,8 +463,8 @@ fun setupPaykit() {
             Log.d(TAG, "SDK Ativado com sucesso")
         }
     })
-}`}</code>
-              </pre>
+}`}
+              />
             </div>
 
             <div className="card p-8 shadow-card">
@@ -474,8 +484,9 @@ fun setupPaykit() {
                 A configuração dos métodos de pagamento pode variar por adquirente. Segue abaixo definição e exemplos:
               </p>
 
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto mb-4">
-                <code>{`interface Paykit {
+              <CodeBlock 
+                language="kotlin"
+                code={`interface Paykit {
     //...
     val paymentMethods: HashMap<PaymentType, PaymentMethod>
 }
@@ -494,16 +505,18 @@ data class PaymentMethod(
     //...
     var enabled: Boolean,
     val methodTypes: HashMap<TransactionType, MethodType>? = null
-)`}</code>
-              </pre>
+)`}
+                className="mb-4"
+              />
 
               <p className="text-muted-foreground mb-4">
-                Para desativar uma modalidade ou método de pagamento, basta alterar a <code className="bg-accent px-2 py-1 rounded">flag</code> de <code className="bg-accent px-2 py-1 rounded">enabled</code> para <code className="bg-accent px-2 py-1 rounded">false</code>:
+                Para desativar uma modalidade ou método de pagamento, basta alterar a <code>flag</code> de <code>enabled</code> para <code>false</code>:
               </p>
 
-              <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
-                <code>{`paykit.paymentMethods[PaymentType.CREDIT]?.enabled = false`}</code>
-              </pre>
+              <CodeBlock 
+                language="kotlin"
+                code={`paykit.paymentMethods[PaymentType.CREDIT]?.enabled = false`}
+              />
             </div>
           </section>
 
@@ -589,7 +602,7 @@ data class PaymentMethod(
                   </div>
 
                   <p className="text-muted-foreground mb-4">
-                    Para realizar uma Transação de <strong>Crédito</strong>, utilize o método <code className="bg-accent px-2 py-1 rounded">credit</code> da classe <code className="bg-accent px-2 py-1 rounded">paykit</code>.
+                    Para realizar uma Transação de <strong>Crédito</strong>, utilize o método <code>credit</code> da classe <code>paykit</code>.
                   </p>
 
                   <p className="text-muted-foreground mb-4">
@@ -642,8 +655,9 @@ data class PaymentMethod(
                     Para o creditType é utilizado um enum para identificação da Modalidade de Crédito.
                   </p>
                   
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`/**
+                  <CodeBlock 
+                    language="kotlin"
+                    code={`/**
  * Enum representando os tipos de transação de Crédito.
  * Correspondência DE-PARA (Português -> Inglês):
  * - CREDITO_AVISTA | TRANSACAO_CREDITO_VISTA -> AT_SIGHT
@@ -668,8 +682,9 @@ enum class CreditTransactionType(
     FINANCING(true, false),                 // CREDITO_CREDIARIO_CREDITO
     ISSUER_INSTALMENTS(true, true),         // TRANSACAO_CREDITO_PARCELADO_EMISSOR
     CREDIT_1_MINUTE(false, false);          // TRANSACAO_BANRICOMPRAS_CREDITO_1_MINUTO
-}`}</code>
-                  </pre>
+}`}
+                    className="mb-4"
+                  />
                   
                   <p className="text-muted-foreground mb-6">
                     Independente da modalidade, os resultados da transação serão devolvidos no objeto paymentResult
@@ -769,8 +784,9 @@ enum class CreditTransactionType(
                     </p>
                   </div>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-8">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -809,8 +825,9 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(id: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                    className="mb-8"
+                  />
 
                   <h5 className="text-lg font-bold mb-3 mt-6">Exemplo de Crédito parcelado pelo lojista¶</h5>
                   
@@ -823,8 +840,9 @@ class MainActivity : AppCompatActivity() {
                     </p>
                   </div>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -863,8 +881,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
                 </div>
               </TabsContent>
 
@@ -877,7 +895,7 @@ class MainActivity : AppCompatActivity() {
                   </p>
                   
                   <p className="text-muted-foreground mb-4">
-                    Os parâmetros de entrada da transação de pré-autorização são configurados no objeto <code className="bg-accent px-2 py-1 rounded">CreditParameters</code>
+                    Os parâmetros de entrada da transação de pré-autorização são configurados no objeto <code>CreditParameters</code>
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">CreditParameters¶</h4>
@@ -911,7 +929,7 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <p className="text-muted-foreground mb-4">
-                    Já os parâmetros de entrada da transação de captura ou cancelamento de pré-autorização são configurados no objeto <code className="bg-accent px-2 py-1 rounded">PendingPreParameters</code>
+                    Já os parâmetros de entrada da transação de captura ou cancelamento de pré-autorização são configurados no objeto <code>PendingPreParameters</code>
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PendingPreParameters¶</h4>
@@ -973,7 +991,7 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <p className="text-muted-foreground mb-4">
-                    Os resultados da transação de pré-autorização ou captura de pré-autoriação serão devolvidos no objeto <code className="bg-accent px-2 py-1 rounded">PaymentResult</code>.
+                    Os resultados da transação de pré-autorização ou captura de pré-autoriação serão devolvidos no objeto <code>PaymentResult</code>.
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult¶</h4>
@@ -1053,7 +1071,7 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <p className="text-muted-foreground mb-4">
-                    Por outro lado, o resultado da transação de cancelamento de pré-autorização serão devolvidos no objeto <code className="bg-accent px-2 py-1 rounded">CancelResult</code>.
+                    Por outro lado, o resultado da transação de cancelamento de pré-autorização serão devolvidos no objeto <code>CancelResult</code>.
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Detalhamento do CancelResult¶</h4>
@@ -1144,8 +1162,9 @@ class MainActivity : AppCompatActivity() {
                     </p>
                   </div>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-8">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -1207,8 +1226,8 @@ class MainActivity : AppCompatActivity() {
     private fun onCaptureResult(id: String?, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado da captura da pré-autorização
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h5 className="text-lg font-bold mb-3">Exemplo de Pré-autorização com operação de crédito para captura¶</h5>
                   
@@ -1220,8 +1239,9 @@ class MainActivity : AppCompatActivity() {
                     </p>
                   </div>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -1282,8 +1302,8 @@ class MainActivity : AppCompatActivity() {
     private fun onCaptureResult(id: String?, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado da captura da pré-autorização
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
                 </div>
               </TabsContent>
 
@@ -1292,11 +1312,11 @@ class MainActivity : AppCompatActivity() {
                 <div className="card p-8 shadow-card">
                   <h3 className="text-2xl font-bold mb-4">Débito</h3>
                   <p className="text-muted-foreground mb-4">
-                    O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. Para realizar uma Transação de Débito, utilize o método <code className="bg-accent px-2 py-1 rounded">debit</code> da classe paykit.
+                    O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. Para realizar uma Transação de Débito, utilize o método <code>debit</code> da classe paykit.
                   </p>
                   
                   <p className="text-muted-foreground mb-4">
-                    Os parâmetros de entrada da transação são configurados no objeto <code className="bg-accent px-2 py-1 rounded">DebitParameters</code>
+                    Os parâmetros de entrada da transação são configurados no objeto <code>DebitParameters</code>
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">DebitParameters</h4>
@@ -1342,8 +1362,9 @@ class MainActivity : AppCompatActivity() {
                   <p className="text-muted-foreground mb-4">
                     Para o debitType é utilizado um enum para identificação da Modalidade de Débito.
                   </p>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`/**
+                  <CodeBlock
+                    language="kotlin"
+                    code={`/**
  * Enum representando os tipos de transação de Débito.
  * Correspondência DE-PARA (Português -> Inglês):
  * - DEBITO_AVISTA | TRANSACAO_DEBITO_VISTA -> AT_SIGHT
@@ -1361,8 +1382,8 @@ enum class DebitTransactionType(
     INVOICE_PAYMENT,           // DEBITO_PAGTO_FATURA_DEBITO
     POSTDATED,                 // TRANSACAO_BANRICOMPRAS_PREDATADO
     WITH_INSTALMENTS(hasInstalments = true) // TRANSACAO_BANRICOMPRAS_PARCELADO
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <p className="text-muted-foreground mb-6">
                     Independente da modalidade, os resultados da transação serão devolvidos no objeto paymentResult
@@ -1585,8 +1606,9 @@ enum class DebitTransactionType(
                     </p>
                   </div>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -1624,27 +1646,29 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <p className="text-muted-foreground mb-4">
                     O debitParameter pode mudar de acordo com a o debitType, onde dado o suporte pela adquirente à modalidade, exemplo do DebitTransactionType.POSTDATED para o pré-datado.
                   </p>
 
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`    val debitParameter = PaymentParameters(
+                  <CodeBlock
+                    language="kotlin"
+                    code={`    val debitParameter = PaymentParameters(
         amount = BigDecimal("100.00"),  // Valor da transação
         debitType = DebitTransactionType.POSTDATED // Débito pré-datado
         postCreditDays = 30 // Dias para o pré-datado
-    )`}</code>
-                  </pre>
+    )`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">DebitTransactionType</h4>
                   <p className="text-muted-foreground mb-4">
                     Para o debitType é utilizado um enum para identificação da Modalidade de Débito.
                   </p>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`/**
+                  <CodeBlock
+                    language="kotlin"
+                    code={`/**
  * Enum representando os tipos de transação de Débito.
  * Correspondência DE-PARA (Português -> Inglês):
  * - DEBITO_AVISTA | TRANSACAO_DEBITO_VISTA -> AT_SIGHT
@@ -1662,8 +1686,8 @@ enum class DebitTransactionType(
     INVOICE_PAYMENT,           // DEBITO_PAGTO_FATURA_DEBITO
     POSTDATED,                 // TRANSACAO_BANRICOMPRAS_PREDATADO
     WITH_INSTALMENTS(hasInstalments = true) // TRANSACAO_BANRICOMPRAS_PARCELADO
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult</h4>
                   <p className="text-muted-foreground mb-4">
@@ -1893,8 +1917,9 @@ enum class DebitTransactionType(
                   </div>
 
                   <h4 className="text-xl font-bold mb-3">Exemplo</h4>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -1932,8 +1957,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-6">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
@@ -1946,8 +1971,9 @@ class MainActivity : AppCompatActivity() {
                   <p className="text-muted-foreground mb-3">
                     Para o voucherType é utilizado um enum para identificação da Modalidade de Voucher.
                   </p>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`/**
+                  <CodeBlock
+                    language="kotlin"
+                    code={`/**
  * Enum representando os tipos de transação de Voucher.
  * Correspondência DE-PARA (Português -> Inglês):
  * - VOUCHER_ALIMENTACAO -> FOOD
@@ -1974,8 +2000,8 @@ enum class VoucherTransactionType(
     AUTOMOBILE,               // VOUCHER_AUTO
     BALANCE_INQUIRY,          // VOUCHER_CONSULTA_SALDO
     TOLL_VALE,                // VOUCHER_VALE_PEDAGIO
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult</h4>
                   <p className="text-muted-foreground mb-3">
@@ -2124,8 +2150,9 @@ enum class VoucherTransactionType(
                   </div>
 
                   <h4 className="text-xl font-bold mb-3">Exemplo</h4>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -2161,8 +2188,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult</h4>
                   <p className="text-muted-foreground mb-4">
@@ -2311,8 +2338,9 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <h4 className="text-xl font-bold mb-3">Exemplo</h4>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -2348,8 +2376,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult</h4>
                   <p className="text-muted-foreground mb-4">
@@ -2498,8 +2526,9 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <h4 className="text-xl font-bold mb-3">Fluxo Unificado de Frotas (TEFs)</h4>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -2595,12 +2624,13 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Demais Rotinas de Frotas</h4>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -2644,8 +2674,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: PaymentResult) {
         // Implementar a lógica para lidar com o resultado do pagamento
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-6">JSONObjectBuilders</h4>
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-6">
@@ -2663,39 +2693,44 @@ class MainActivity : AppCompatActivity() {
                   </p>
 
                   <h6 className="text-base font-bold mb-2 mt-4">Configurações Básicas:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`val builder = TefFleetUnifiedBuilder()
+                  <CodeBlock
+                    language="kotlin"
+                    code={`val builder = TefFleetUnifiedBuilder()
     .setAcquirerCode(121)              // Código da adquirente (obrigatório)
     .setOperationType(1)               // Tipo de operação
-    .setWorkOrderNumber("OS123")       // Número da OS`}</code>
-                  </pre>
+    .setWorkOrderNumber("OS123")       // Número da OS`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Dados do Veículo e Motorista:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`builder
+                  <CodeBlock
+                    language="kotlin"
+                    code={`builder
     .setVehiclePlate("ABC1234")       // Placa
     .setDriverId("123456")            // ID do motorista
-    .setCpf("12345678900")            // CPF`}</code>
-                  </pre>
+    .setCpf("12345678900")            // CPF`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Métricas do Veículo:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`builder
+                  <CodeBlock
+                    language="kotlin"
+                    code={`builder
     .setOdometer(50000)               // Hodômetro
     .setHourMeter(1000)               // Horímetro
-    .setMileage(5000)                 // Quilometragem`}</code>
-                  </pre>
+    .setMileage(5000)                 // Quilometragem`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Configurações BR Premmia:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`builder
+                  <CodeBlock
+                    language="kotlin"
+                    code={`builder
     .setHasBrPremmia(true)
-    .setBrPremmiaEmployeeCode("BP123")`}</code>
-                  </pre>
+    .setBrPremmiaEmployeeCode("BP123")`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Detalhes da Operação:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`// Adicionar Serviço
+                  <CodeBlock
+                    language="kotlin"
+                    code={`// Adicionar Serviço
 builder.addServiceItem(
     ServiceItem(
         code = "SERV1",
@@ -2711,18 +2746,20 @@ builder.addRefuelItem(
         quantity = 30.0,
         unitPrice = 5.0.toBigDecimal()
     )
-)`}</code>
-                  </pre>
+)`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Parâmetros Customizados:</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`builder.setParameter("chave", ParameterValue.Str("valor"))`}</code>
-                  </pre>
+                  <CodeBlock
+                    language="kotlin"
+                    code={`builder.setParameter("chave", ParameterValue.Str("valor"))`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Finalização</h6>
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-4">
-                    <code>{`val jsonObject = builder.build()    // Gera o objeto JSON final`}</code>
-                  </pre>
+                  <CodeBlock
+                    language="kotlin"
+                    code={`val jsonObject = builder.build()    // Gera o objeto JSON final`}
+                  />
 
                   <h6 className="text-base font-bold mb-2 mt-4">Observações Importantes:</h6>
                   <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 mb-6">
@@ -2868,10 +2905,10 @@ builder.addRefuelItem(
                     O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada.
                   </p>
                   <p className="text-muted-foreground mb-6">
-                    Para realizar uma Transação de Cancelamento, utilize o método <code className="bg-accent px-2 py-1 rounded">cancel</code> da classe paykit.
+                    Para realizar uma Transação de Cancelamento, utilize o método <code>cancel</code> da classe paykit.
                   </p>
                   <p className="text-muted-foreground mb-6">
-                    Os parâmetros de entrada da transação são configurados no objeto <code className="bg-accent px-2 py-1 rounded">CancelParameter</code>
+                    Os parâmetros de entrada da transação são configurados no objeto <code>CancelParameter</code>
                   </p>
 
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-6">
@@ -2908,14 +2945,15 @@ builder.addRefuelItem(
                   </div>
 
                   <p className="text-muted-foreground mb-6 text-sm">
-                    Os parâmetros <code className="bg-accent px-1 rounded">paymentId</code>, <code className="bg-accent px-1 rounded">amount</code>, <code className="bg-accent px-1 rounded">originalPaymentType</code> e <code className="bg-accent px-1 rounded">originalTransactionDate</code> são utilizados para localizar a transação original que deve ser cancelada. Quando não informado será consultado no momento do cancelamento. Alguns provedores permitem cancelamento parcial (veja regras de negócio com o próprio provedor). Para esse caso possuímos o parâmetro <code className="bg-accent px-1 rounded">cancelAmount</code> que pode ser utilizado.
+                    Os parâmetros <code>paymentId</code>, <code>amount</code>, <code>originalPaymentType</code> e <code>originalTransactionDate</code> são utilizados para localizar a transação original que deve ser cancelada. Quando não informado será consultado no momento do cancelamento. Alguns provedores permitem cancelamento parcial (veja regras de negócio com o próprio provedor). Para esse caso possuímos o parâmetro <code>cancelAmount</code> que pode ser utilizado.
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
                   <p className="text-muted-foreground mb-4">Para realizar uma Transação de Cancelamento, utilize o exemplo abaixo.</p>
                   
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -2953,8 +2991,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(transactionId: String, transaction: CancelResult) {
         // Implementar a lógica para lidar com o resultado da reversão
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do CancelResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto CancelResult, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
@@ -3081,8 +3119,9 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
                   
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -3113,8 +3152,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(result: PrintResult) {
         // Implementar a lógica para lidar com o resultado da reversão
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do PrintResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PrintResult, retornado no callback da transação, contém informações essenciais sobre o status da impressão. Abaixo estão os principais campos disponíveis:</p>
@@ -3206,8 +3245,9 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
                   
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -3238,8 +3278,8 @@ class MainActivity : AppCompatActivity() {
     private fun onPaymentResult(result: PrintResult) {
         // Implementar a lógica para lidar com o resultado da reversão
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do PrintResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PrintResult, retornado no callback da transação, contém informações essenciais sobre o status da impressão. Abaixo estão os principais campos disponíveis:</p>
@@ -3331,8 +3371,9 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
                   
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm mb-6">
-                    <code>{`import android.os.Bundle
+                  <CodeBlock
+                    language="kotlin"
+                    code={`import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.linx.paykit.common.Callback
@@ -3370,8 +3411,8 @@ class MainActivity : AppCompatActivity() {
     private fun onGetTransaction(transaction: TransactionQueryResult?) {
         // Implementar a lógica para lidar com o resultado da consulta
     }
-}`}</code>
-                  </pre>
+}`}
+                  />
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do TransactionQueryResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionQueryResult, retornado no callback da transação, contém informações da consulta. Abaixo estão os principais campos disponíveis:</p>
@@ -3521,7 +3562,7 @@ class MainActivity : AppCompatActivity() {
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-4">Tipos de Operações</h3>
               <p className="text-muted-foreground mb-4">
-                O parâmetro <code className="text-primary bg-accent/20 px-2 py-1 rounded">paymentType</code> determina qual tipo de operação será executada. As operações disponíveis são:
+                O parâmetro <code className="text-primary">paymentType</code> determina qual tipo de operação será executada. As operações disponíveis são:
               </p>
               
               <div className="grid md:grid-cols-2 gap-3">
@@ -3993,7 +4034,9 @@ class MainActivity : AppCompatActivity() {
                     
                     <div className="mt-4">
                       <h6 className="font-semibold mb-2">Exemplo de codificação Kotlin:</h6>
-                      <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`fun bitmapToBase64(bitmap: Bitmap): String {
+                      <CodeBlock
+                        language="kotlin"
+                        code={`fun bitmapToBase64(bitmap: Bitmap): String {
     val byteArrayOutputStream = ByteArrayOutputStream()
     bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
     val byteArray = byteArrayOutputStream.toByteArray()
@@ -4003,17 +4046,18 @@ class MainActivity : AppCompatActivity() {
 // Redimensionar antes da codificação
 fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
     if (originalBitmap.width <= maxWidthInPixels) return originalBitmap
-    
+
     val ratio = maxWidthInPixels.toFloat() / originalBitmap.width
     val newHeight = (originalBitmap.height * ratio).toInt()
-    
+
     return Bitmap.createScaledBitmap(
         originalBitmap,
         maxWidthInPixels,
         newHeight,
         true
     )
-}`}</code></pre>
+}`}
+                      />
                     </div>
                   </div>
                 </TabsContent>
@@ -4040,46 +4084,108 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Tipos de Transação</h3>
               <p className="text-muted-foreground mb-4">
-                O parâmetro <code className="text-primary bg-accent/20 px-2 py-1 rounded">transactionType</code> pode variar de acordo com o método de pagamento:
+                O parâmetro <code className="text-primary">transactionType</code> pode variar de acordo com o método de pagamento:
               </p>
-              
+
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="p-4 border rounded-lg">
+                <div className="p-4 border rounded-lg bg-accent/5">
                   <h4 className="font-semibold mb-3 text-accent">Para Cartão de Crédito</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• <code>at_sight</code> - À vista</li>
-                    <li>• <code>installments</code> - Parcelado genérico</li>
-                    <li>• <code>store_installments</code> - Parcelado loja</li>
-                    <li>• <code>admin_installments</code> - Parcelado administradora</li>
-                    <li>• <code>bank_installments</code> - Parcelado banco</li>
-                    <li>• <code>issuer_installments</code> - Parcelado emissor</li>
-                    <li>• <code>pre_authorization</code> - Pré-autorização</li>
-                    <li>• <code>financing</code> - Financiamento</li>
-                    <li>• <code>credit_1_minute</code> - Crédito em 1 minuto</li>
+                  <p className="text-xs text-muted-foreground mb-3">Enum: <code className="text-primary">CreditTransactionType</code></p>
+                  <ul className="text-sm space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">AT_SIGHT</code> - À vista</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">STORE_INSTALMENTS</code> - Parcelado loja</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">ADMIN_INSTALMENTS</code> - Parcelado administradora</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">BANK_INSTALMENTS</code> - Parcelado banco</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">ISSUER_INSTALMENTS</code> - Parcelado emissor</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">PRE_AUTHORIZATION</code> - Pré-autorização</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">FINANCING</code> - Financiamento</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">CREDIT_1_MINUTE</code> - Crédito em 1 minuto</div>
+                    </li>
                   </ul>
                 </div>
-                
-                <div className="p-4 border rounded-lg">
+
+                <div className="p-4 border rounded-lg bg-accent/5">
                   <h4 className="font-semibold mb-3 text-accent">Para Cartão de Débito</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• <code>at_sight</code> - À vista</li>
-                    <li>• <code>acquirer_at_sight</code> - À vista pela adquirente</li>
-                    <li>• <code>with_instalments</code> - Com parcelamento</li>
-                    <li>• <code>invoice_payment</code> - Pagamento de fatura</li>
-                    <li>• <code>postdated</code> - Pós-datado</li>
+                  <p className="text-xs text-muted-foreground mb-3">Enum: <code className="text-primary">DebitTransactionType</code></p>
+                  <ul className="text-sm space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">AT_SIGHT</code> - À vista</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">ACQUIRER_AT_SIGHT</code> - À vista pela adquirente</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">WITH_INSTALMENTS</code> - Com parcelamento</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">INVOICE_PAYMENT</code> - Pagamento de fatura</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">POSTDATED</code> - Pós-datado</div>
+                    </li>
                   </ul>
                 </div>
-                
-                <div className="p-4 border rounded-lg">
+
+                <div className="p-4 border rounded-lg bg-accent/5">
                   <h4 className="font-semibold mb-3 text-accent">Para Voucher</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• <code>food</code> - Alimentação</li>
-                    <li>• <code>meal</code> - Refeição</li>
-                    <li>• <code>automotive</code> - Automotivo</li>
-                    <li>• <code>culture</code> - Cultura</li>
-                    <li>• <code>toll</code> - Pedágio</li>
-                    <li>• <code>benefits</code> - Benefícios</li>
-                    <li>• <code>automobile</code> - Automóvel</li>
+                  <p className="text-xs text-muted-foreground mb-3">Enum: <code className="text-primary">VoucherTransactionType</code></p>
+                  <ul className="text-sm space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">FOOD</code> - Alimentação</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">MEAL</code> - Refeição</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">AUTOMOTIVE</code> - Automotivo</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">CULTURE</code> - Cultura</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">TOLL</code> - Pedágio</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">BENEFITS</code> - Benefícios</div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent">•</span>
+                      <div><code className="text-primary font-semibold">AUTOMOBILE</code> - Automóvel</div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -4089,13 +4195,15 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Formato dos Itens do Pedido (OrderItems)</h3>
               <p className="text-muted-foreground mb-6">
-                O parâmetro <code className="text-primary bg-accent/20 px-2 py-1 rounded">orderItems</code> pode ser informado em dois formatos:
+                O parâmetro <code className="text-primary">orderItems</code> pode ser informado em dois formatos:
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Formato JSON</h4>
-                  <pre className="bg-card p-4 rounded text-xs overflow-x-auto mb-3"><code>{`[
+                  <CodeBlock
+                    language="json"
+                    code={`[
   {
     "sku": "123",
     "name": "Produto 1",
@@ -4110,7 +4218,9 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
     "quantity": 2,
     "unityOfMeasure": "UN"
   }
-]`}</code></pre>
+]`}
+                    className="mb-3"
+                  />
                   <p className="text-sm text-muted-foreground">
                     <strong>Importante:</strong> O JSON deve ser codificado para URL.
                   </p>
@@ -4118,7 +4228,11 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                 
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Formato Delimitado</h4>
-                  <pre className="bg-card p-4 rounded text-xs overflow-x-auto mb-3"><code>123|Produto 1|1000|1|UN;456|Produto 2|2000|2|UN</code></pre>
+                  <CodeBlock
+                    language="text"
+                    code={`123|Produto 1|1000|1|UN;456|Produto 2|2000|2|UN`}
+                    className="mb-3"
+                  />
                   <div className="text-sm text-muted-foreground space-y-1">
                     <p><strong>Formato:</strong> sku|nome|valor|quantidade|unidadeMedida</p>
                     <p><strong>Separador de itens:</strong> ;</p>
@@ -4187,7 +4301,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Processando Resultados</h3>
               <p className="text-muted-foreground mb-4">
-                Após a operação ser concluída, o PaykitDeeplink retorna um resultado que pode ser processado pela aplicação que originou a chamada. Os resultados são fornecidos como extras em um Intent, onde a chave é <code className="text-primary bg-accent/20 px-2 py-1 rounded">result</code>.
+                Após a operação ser concluída, o PaykitDeeplink retorna um resultado que pode ser processado pela aplicação que originou a chamada. Os resultados são fornecidos como extras em um Intent, onde a chave é <code className="text-primary">result</code>.
               </p>
               
               <h4 className="font-semibold mb-3">Dependendo do tipo de operação, o resultado pode conter:</h4>
@@ -4210,7 +4324,9 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">1. Implementação com URI</h4>
                   <p className="text-sm text-muted-foreground mb-3">Para implementar a chamada de um deeplink para pagamento com cartão de crédito usando URI:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`val uri = Uri.parse("paykit://payment")
+                  <CodeBlock
+                    language="kotlin"
+                    code={`val uri = Uri.parse("paykit://payment")
     .buildUpon()
     .appendQueryParameter("paymentType", "credit")
     .appendQueryParameter("amount", "1000") // R$ 10,00
@@ -4220,13 +4336,16 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
     .build()
 
 val intent = Intent(Intent.ACTION_VIEW, uri)
-startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}</code></pre>
+startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
+                  />
                 </div>
                 
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">2. Implementação com Intent</h4>
                   <p className="text-sm text-muted-foreground mb-3">Alternativamente, você pode implementar usando diretamente o Intent com extras:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`val intent = Intent(Intent.ACTION_VIEW)
+                  <CodeBlock
+                    language="kotlin"
+                    code={`val intent = Intent(Intent.ACTION_VIEW)
 intent.setPackage("com.linx.paykit.example") // Pacote da aplicação de pagamento
 intent.setData(Uri.parse("paykit://payment"))
 intent.putExtra("paymentType", "credit")
@@ -4234,12 +4353,15 @@ intent.putExtra("amount", "1000") // R$ 10,00
 intent.putExtra("billOfSale", "PEDIDO123")
 intent.putExtra("installments", "1")
 intent.putExtra("autoPrintReceipt", "true")
-startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}</code></pre>
+startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
+                  />
                 </div>
                 
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">Processando o resultado:</h4>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+                  <CodeBlock
+                    language="kotlin"
+                    code={`override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
 
     if (requestCode == REQUEST_CODE_PAYMENT && resultCode == Activity.RESULT_OK) {
@@ -4250,7 +4372,8 @@ startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}</code></pre>
         val success = result?.paymentResult?.status == TransactionStatus.COMPLETED
         // ... outros dados conforme necessário
     }
-}`}</code></pre>
+}`}
+                  />
                 </div>
               </div>
             </div>
@@ -4259,14 +4382,16 @@ startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}</code></pre>
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Biblioteca de Apoio ao Desenvolvedor</h3>
               <p className="text-muted-foreground mb-6">
-                O SDK disponibiliza classes auxiliares na biblioteca <code className="text-primary bg-accent/20 px-2 py-1 rounded">com.linx.paykit.common.deeplink.parameters</code> no pacote <code className="text-primary bg-accent/20 px-2 py-1 rounded">SDKPayServices.common</code> para facilitar a integração com o PaykitDeeplink.
+                O SDK disponibiliza classes auxiliares na biblioteca <code className="text-primary">com.linx.paykit.common.deeplink.parameters</code> no pacote <code className="text-primary">SDKPayServices.common</code> para facilitar a integração com o PaykitDeeplink.
               </p>
               
               <div className="space-y-6">
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">DeeplinkParameter</h4>
                   <p className="text-sm text-muted-foreground mb-3">Contém todas as definições dos parâmetros suportados como uma enumeração:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`enum class DeeplinkParameter(val key: String, val value: String? = null) {
+                  <CodeBlock
+                    language="kotlin"
+                    code={`enum class DeeplinkParameter(val key: String, val value: String? = null) {
     SCHEME("scheme", "paykit"),
     AUTOMATION_CNPJ("automationCnpj"),
     STORE_CNPJ("storeCnpj"),
@@ -4276,23 +4401,29 @@ startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}</code></pre>
 }
 
 // Uso
-intent.putExtra(DeeplinkParameter.AMOUNT.key, "10.50")`}</code></pre>
+intent.putExtra(DeeplinkParameter.AMOUNT.key, "10.50")`}
+                  />
                 </div>
                 
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">DeeplinkExtensions</h4>
                   <p className="text-sm text-muted-foreground mb-3">Fornece métodos de extensão para facilitar a extração e processamento de parâmetros:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`// Exemplo de uso dos métodos de extensão
+                  <CodeBlock
+                    language="kotlin"
+                    code={`// Exemplo de uso dos métodos de extensão
 val amount = intent.extractAmount()
 val cpf = intent.extractCpf()
 val providerParams = intent.extractProviderParams()
-val orderItems = intent.extractOrderItems()`}</code></pre>
+val orderItems = intent.extractOrderItems()`}
+                  />
                 </div>
                 
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">TransactionParameterBuilder</h4>
                   <p className="text-sm text-muted-foreground mb-3">Permite criar facilmente diferentes tipos de parâmetros:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`// Criando parâmetros a partir de um Intent
+                  <CodeBlock
+                    language="kotlin"
+                    code={`// Criando parâmetros a partir de um Intent
 val builder = TransactionParameterBuilder.fromUri(intent)
 
 // Construindo diferentes tipos de parâmetros
@@ -4301,17 +4432,21 @@ val debitParams = builder.buildDebitParameters()
 val cancelParams = builder.buildCancelParameter()
 
 // Ou usando método genérico
-val params = builder.build<CreditParameters>()`}</code></pre>
+val params = builder.build<CreditParameters>()`}
+                  />
                 </div>
                 
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">PaymentTypeOption e TransactionTypeOption</h4>
                   <p className="text-sm text-muted-foreground mb-3">Oferecem abstrações seguras para trabalhar com tipos:</p>
-                  <pre className="bg-card p-4 rounded text-sm overflow-x-auto"><code>{`// Convertendo string para PaymentTypeOption
+                  <CodeBlock
+                    language="kotlin"
+                    code={`// Convertendo string para PaymentTypeOption
 val paymentTypeOption = PaymentTypeOption.fromString("credit")
 
 // Convertendo string para TransactionTypeOption
-val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}</code></pre>
+val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
+                  />
                 </div>
               </div>
             </div>
@@ -4441,6 +4576,23 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}</code
                       <td className="p-3 text-sm">2.0.0.92</td>
                       <td className="p-3">
                         <span className="px-3 py-1 bg-green-500/20 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">OK</span>
+                      </td>
+                    </tr>
+                    <tr className="border-b hover:bg-accent/50 transition-smooth">
+                      <td className="p-3">
+                        <div className="flex items-center gap-3">
+                          <img src={tectoyP3} alt="Tectoy P3" className="w-16 h-16 object-contain" />
+                          <div className="font-medium">Tectoy P3</div>
+                        </div>
+                      </td>
+                      <td className="p-3">
+                        <div className="flex flex-wrap gap-1">
+                          <span className="px-2 py-1 bg-muted text-xs rounded">-</span>
+                        </div>
+                      </td>
+                      <td className="p-3 text-sm">-</td>
+                      <td className="p-3">
+                        <span className="px-3 py-1 bg-yellow-500/20 text-yellow-700 dark:text-yellow-400 rounded-full text-sm font-semibold">DEV</span>
                       </td>
                     </tr>
                     <tr className="border-b hover:bg-accent/50 transition-smooth">
@@ -5162,12 +5314,12 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}</code
                       </thead>
                       <tbody>
                         <tr className="border-b hover:bg-accent/50 transition-smooth">
-                          <td className="p-3"><code className="bg-accent/20 px-2 py-1 rounded text-sm">kotlin</code></td>
+                          <td className="p-3"><code>kotlin</code></td>
                           <td className="p-3">1.7.10</td>
                           <td className="p-3">1.9.22</td>
                         </tr>
                         <tr className="border-b hover:bg-accent/50 transition-smooth">
-                          <td className="p-3"><code className="bg-accent/20 px-2 py-1 rounded text-sm">gradle</code></td>
+                          <td className="p-3"><code>gradle</code></td>
                           <td className="p-3">6.9.4</td>
                           <td className="p-3">8.9</td>
                         </tr>
@@ -5177,7 +5329,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}</code
                   
                   <div className="mt-4 p-4 bg-accent/30 rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua determinada versão de <code className="bg-accent/20 px-1 rounded text-xs">gradle</code> e <code className="bg-accent/20 px-1 rounded text-xs">kotlin</code> e todo <code className="bg-accent/20 px-1 rounded text-xs">bytecode</code> está sendo transpilado para <strong>Java 8</strong>, assim conseguimos atender uma maior quantidade de integradores.
+                      Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua determinada versão de <code>gradle</code> e <code>kotlin</code> e todo <code>bytecode</code> está sendo transpilado para <strong>Java 8</strong>, assim conseguimos atender uma maior quantidade de integradores.
                     </p>
                   </div>
                 </div>
