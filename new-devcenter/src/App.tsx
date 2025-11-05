@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/PayKitSdkUnico.github.io">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/devcenter" element={<DevCenter />} />
