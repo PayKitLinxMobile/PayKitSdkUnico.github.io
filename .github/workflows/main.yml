@@ -44,7 +44,9 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: new-devcenter/package-lock.json      - name: Install dependencies
+          cache-dependency-path: new-devcenter/package-lock.json
+
+      - name: Install dependencies
         working-directory: ./new-devcenter
         run: npm ci
 
