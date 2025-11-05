@@ -48,11 +48,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./new-devcenter
-        run: npm ci
-
-      - name: Build
+        run: npm ci      - name: Build
         working-directory: ./new-devcenter
-        run: npm run build      - name: Deploy to GitHub Pages
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
