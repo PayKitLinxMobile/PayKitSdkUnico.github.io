@@ -1,50 +1,73 @@
-# DevCenter SDK Único
+# Welcome to your Lovable project
 
-Repositório da documentação do SDK Único.
+## Project info
 
-## Dependências Necessárias para Desenvolvimento.
+**URL**: https://lovable.dev/projects/d9f07efa-60b6-4b90-b711-ca0b3175b408
 
-- `python3`
-- `pip (latest)`
-- `venv (latest)`
+## How can I edit this code?
 
-## Como iniciar o desenvolvimento?
+There are several ways of editing your application.
 
-- Instalar dependências
+**Use Lovable**
 
-    1. [Instalar o Python](https://www.python.org/)
+Simply visit the [Lovable Project](https://lovable.dev/projects/d9f07efa-60b6-4b90-b711-ca0b3175b408) and start prompting.
 
-    2. Instalar Virtual Environment
+Changes made via Lovable will be committed automatically to this repo.
 
-    ```bash
-    python3 -m pip install --upgrade pip
-    python3 -m pip install virtualenv
-    ```
+**Use your preferred IDE**
 
-- Iniciar o Virtual Environment:
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-    Linux/MacOS
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-    ```bash
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
+Follow these steps:
 
-    Windows
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-    ```ps
-    python -m venv .venv
-    .venv\Scripts\Activate
-    ```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-- Instalar dependências de projeto no Virtual Environment:
+# Step 3: Install the necessary dependencies.
+npm i
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
 
-- Iniciar o Mkdocs Server:
+**Edit a file directly in GitHub**
 
-    ```bash
-    mkdocs serve
-    ```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
+
+**Use GitHub Codespaces**
+
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/d9f07efa-60b6-4b90-b711-ca0b3175b408) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
