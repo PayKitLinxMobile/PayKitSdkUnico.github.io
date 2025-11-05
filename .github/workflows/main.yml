@@ -52,12 +52,12 @@ jobs:
 
       - name: Build
         working-directory: ./new-devcenter
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
+        run: npm run build      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./new-devcenter/dist
           publish_branch: gh-pages
+          destination_dir: PayKitSdkUnico.github.io
           force_orphan: true
+          keep_files: false
