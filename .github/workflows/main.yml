@@ -4,10 +4,16 @@ on:
     branches:
       - master 
       - main
+      - new-devcenter
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  # Deploy MkDocs (master/main branches)
+  deploy-mkdocs:
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,3 +30,34 @@ jobs:
       - run: pip install pillow cairosvg
       - run: pip install pillow cairosvg --upgrade 
       - run: mkdocs gh-deploy --force
+
+  # Deploy React App (new-devcenter branch)
+  deploy-react:
+    if: github.ref == 'refs/heads/new-devcenter'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: new-devcenter/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./new-devcenter
+        run: npm ci
+
+      - name: Build
+        working-directory: ./new-devcenter
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./new-devcenter/dist
+          publish_branch: gh-pages
+          force_orphan: true

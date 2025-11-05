@@ -163,3 +163,9 @@ cython_debug/
 
 
 **/.DS_Store
+
+# Node.js (new-devcenter)
+new-devcenter/node_modules/
+new-devcenter/dist/
+new-devcenter/.cache/
+new-devcenter/.vite/
