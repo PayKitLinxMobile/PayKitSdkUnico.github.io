@@ -1,45 +1,60 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ChevronRight, UserPlus, BookOpen, Code, Rocket, Package, CreditCard, Link2, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CodeBlock from "@/components/CodeBlock";
-import visaoSolucao from "@/assets/visao-solucao.png";
-import sunmiP2 from "@/assets/terminals/Model_Sunmi_P2.png";
-import ingenicoA8 from "@/assets/terminals/Model_Ingenico_APOS_A8.webp";
-import gertecGpos780 from "@/assets/terminals/Model_Gertec_GPOS_780.png";
-import gertecGpos760 from "@/assets/terminals/Model_Gertec_GPOS_760.png";
-import ingenicoDx8000 from "@/assets/terminals/Model_Ingenico_DX_8000.png";
-import ingenicoDx4000 from "@/assets/terminals/Model_Ingenico_DX_4000.png";
-import positivoL400 from "@/assets/terminals/Model_Positivo_L400.png";
 import adyenS1f2 from "@/assets/terminals/Model_Adyen_S1F2.png";
+import elginM10Pro from "@/assets/terminals/Model_Elgin_M10-PRO.png";
+import elginMk15 from "@/assets/terminals/Model_Elgin_MK15.png";
+import gertecGpos760 from "@/assets/terminals/Model_Gertec_GPOS_760.png";
+import gertecGpos780 from "@/assets/terminals/Model_Gertec_GPOS_780.png";
+import gertecGs300 from "@/assets/terminals/Model_Gertec_GS300.png";
 import gertecMobiPin10 from "@/assets/terminals/Model_Gertec_MOBI_PIN10.png";
 import gertecMp15 from "@/assets/terminals/Model_Gertec_MP15.png";
-import ingenicoIcmp from "@/assets/terminals/Model_Ingenico_ICMP.png";
-import paxD180 from "@/assets/terminals/Model_Pax_D180.png";
-import paxD200 from "@/assets/terminals/Model_Pax_D200.png";
-import newlandMe30s from "@/assets/terminals/Model_Newland_ME30S.webp";
 import gertecPpc920 from "@/assets/terminals/Model_Gertec_PPC920.webp";
 import gertecPpc930 from "@/assets/terminals/Model_Gertec_PPC930.png";
 import gertecPpc940 from "@/assets/terminals/Model_Gertec_PPC940.png";
+import gertecSk210 from "@/assets/terminals/Model_Gertec_SK210.png";
+import ingenicoA8 from "@/assets/terminals/Model_Ingenico_APOS_A8.webp";
+import ingenicoDx4000 from "@/assets/terminals/Model_Ingenico_DX_4000.png";
+import ingenicoDx8000 from "@/assets/terminals/Model_Ingenico_DX_8000.png";
+import ingenicoIcmp from "@/assets/terminals/Model_Ingenico_ICMP.png";
 import ingenicoL300 from "@/assets/terminals/Model_Ingenico_L-300.png";
 import ingenicoL3600 from "@/assets/terminals/Model_Ingenico_L-3600.png";
+import newlandMe30s from "@/assets/terminals/Model_Newland_ME30S.webp";
 import paxD140 from "@/assets/terminals/Model_Pax_D140.png";
+import paxD180 from "@/assets/terminals/Model_Pax_D180.png";
+import paxD200 from "@/assets/terminals/Model_Pax_D200.png";
+import positivoL400 from "@/assets/terminals/Model_Positivo_L400.png";
 import sunmiD2 from "@/assets/terminals/Model_Sunmi_D2.webp";
 import sunmiD2Mini from "@/assets/terminals/Model_Sunmi_D2_Mini.png";
 import sunmiK2 from "@/assets/terminals/Model_Sunmi_K2.png";
 import sunmiK2Mini from "@/assets/terminals/Model_Sunmi_K2_Mini.webp";
+import sunmiP2 from "@/assets/terminals/Model_Sunmi_P2.png";
 import sunmiT2 from "@/assets/terminals/Model_Sunmi_T2.png";
 import sunmiT2Mini from "@/assets/terminals/Model_Sunmi_T2_Mini.png";
-import gertecGs300 from "@/assets/terminals/Model_Gertec_GS300.png";
-import gertecSk210 from "@/assets/terminals/Model_Gertec_SK210.png";
-import elginMk15 from "@/assets/terminals/Model_Elgin_MK15.png";
-import elginM10Pro from "@/assets/terminals/Model_Elgin_M10-PRO.png";
 import tectoyP3 from "@/assets/terminals/Model_Tectoy_P3.png";
+import visaoSolucao from "@/assets/visao-solucao.png";
+import CodeBlock from "@/components/CodeBlock";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BookOpen, ChevronRight, Code, CreditCard, Link2, Menu, Package, Rocket, Sparkles, UserPlus, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const DevCenter = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const location = useLocation();
+
+  // Scroll to anchor when page loads or hash changes
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Small delay to ensure DOM is fully rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -158,13 +173,13 @@ const DevCenter = () => {
                 Para iniciar a configuração do SDK único, o seu projeto precisa incluir as bibliotecas do SDK Único.
                 A solicitação do Token de Acesso e credenciamento devem ser realizados a partir do formulário abaixo:
               </p>
-              
+
               <div className="bg-accent/30 p-6 rounded-lg mb-6">
                 <h3 className="text-xl font-bold mb-4">Paykit - SDK Único</h3>
                 <p className="text-muted-foreground mb-4">
                   Bem-vindo ao Portal de solicitação de Tokens do Projeto SDK Único. Para a sua segurança, todas as informações preenchidas serão analisadas pelo time do Paykit, avaliando critérios de eligibilidade de utilização do SDK Único em sua aplicação.
                 </p>
-                
+
                 <div className="bg-card p-4 rounded border-l-4 border-primary mb-6">
                   <h4 className="font-semibold mb-2">Consentimento para Tratamento de Dados Pessoais</h4>
                   <p className="text-sm text-muted-foreground">
@@ -190,13 +205,13 @@ const DevCenter = () => {
           {/* Primeiros Passos */}
           <section id="primeiros-passos" className="mb-16 scroll-mt-24">
             <h2 className="text-4xl font-bold mb-6 gradient-text">Primeiros Passos</h2>
-            
+
             <div className="card p-8 mb-8 shadow-card">
               <h3 className="text-2xl font-bold mb-4">Passo 1 - Configurar o projeto</h3>
               <p className="text-muted-foreground mb-4">
                 Adicione esta seção ao seu arquivo <code>settings.gradle.kts</code> nos blocos <code>repositories</code>.
               </p>
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`maven{
     name="SDK_UNICO"
@@ -208,11 +223,11 @@ const DevCenter = () => {
 }`}
                 className="mb-4"
               />
-              
+
               <p className="text-muted-foreground mb-4">
                 Adicione a flavor da adquirente ao <code>build.gradle.kts</code>, no bloco <code>android</code> para seleção da adquirente no SDK Único.
               </p>
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`val flavors = setOf(
     "stone" to 22,
@@ -239,7 +254,7 @@ android {
     }
 }`}
               />
-              
+
               <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mt-4 mb-4">
                 <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                 <p className="text-sm text-muted-foreground">
@@ -262,7 +277,7 @@ android {
               <p className="text-muted-foreground mb-4">
                 Adicionar as seguintes dependências necessárias:
               </p>
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`val sdkPayServicesVersion = "0.0.000169"
 
@@ -277,7 +292,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
               <p className="text-muted-foreground mb-4">
                 Adicione as seguintes permissões ao seu arquivo <code>AndroidManifest.xml</code>:
               </p>
-              <CodeBlock 
+              <CodeBlock
                 language="xml"
                 code={`<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.seuapp">
@@ -309,9 +324,9 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
               <p className="text-muted-foreground mb-4">
                 Ao utilizar as bibliotecas standalone, não é necessário definir flavors, permitindo que o integrador configure suas próprias flavors e parametrizações livremente.
               </p>
-              
+
               <h4 className="text-xl font-bold mb-3 mt-6">Referências de bibliotecas</h4>
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`val sdkPayServicesVersion = "1.0.1.18662"
 val adquirente = "stone"
@@ -367,7 +382,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
               <p className="text-muted-foreground mb-6">
                 A interface <code>Paykit</code> define os métodos que cada adquirente deve implementar para realizar transações de pagamento.
               </p>
-              
+
               <h4 className="text-xl font-bold mb-4">Métodos</h4>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
@@ -416,7 +431,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
           {/* Primeira Integração */}
           <section id="primeira-integracao" className="mb-16 scroll-mt-24">
             <h2 className="text-4xl font-bold mb-6 gradient-text">Desenvolvimento Primeira Integração</h2>
-            
+
             <div className="card p-8 mb-8 shadow-card">
               <h3 className="text-2xl font-bold mb-4">Passo 1 - Ativação</h3>
               <p className="text-muted-foreground mb-4">
@@ -425,12 +440,12 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
               <p className="text-muted-foreground mb-4">
                 Certifique-se de ter as chaves para baixar as dependências, de acordo com a instrução de configuração do SDK Único. E seu <code>PaykitId</code> que será necessário para ativar o SDK Único.
               </p>
-              
+
               <h4 className="text-xl font-bold mb-3 mt-6">PaykitId e Credenciamento</h4>
               <p className="text-muted-foreground mb-4">
                 Para utilizar o SDK Único, é necessário ser credenciado como Automação Comercial/Integrador. Esse processo é feito ao preencher o formulário na etapa de configuração do SDK Único e mediante a aprovação.
               </p>
-              
+
               <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                 <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                 <p className="text-sm text-muted-foreground">
@@ -438,7 +453,7 @@ implementation("SDKPayServices:common:$sdkPayServicesVersion")`}
                 </p>
               </div>
 
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`import android.util.Log
 import com.linx.paykit.common.Callback
@@ -472,7 +487,7 @@ fun setupPaykit() {
               <p className="text-muted-foreground mb-4">
                 O SDK Único permite definir quais modalidades e métodos de pagamento estarão disponíveis, facilitando a configuração por parte do integrador.
               </p>
-              
+
               <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                 <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                 <p className="text-sm text-muted-foreground">
@@ -484,7 +499,7 @@ fun setupPaykit() {
                 A configuração dos métodos de pagamento pode variar por adquirente. Segue abaixo definição e exemplos:
               </p>
 
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`interface Paykit {
     //...
@@ -513,7 +528,7 @@ data class PaymentMethod(
                 Para desativar uma modalidade ou método de pagamento, basta alterar a <code>flag</code> de <code>enabled</code> para <code>false</code>:
               </p>
 
-              <CodeBlock 
+              <CodeBlock
                 language="kotlin"
                 code={`paykit.paymentMethods[PaymentType.CREDIT]?.enabled = false`}
               />
@@ -528,7 +543,7 @@ data class PaymentMethod(
                 Para realizar testes com o SDK Único, é preciso selecionar com qual SDK deseja realizar a transação.
                 Para tal, disponibilizamos uma App de Exemplo com flavors, definindo qual adquirente desejada.
               </p>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -570,7 +585,7 @@ data class PaymentMethod(
           {/* Transações */}
           <section id="transacoes" className="mb-16 scroll-mt-24">
             <h2 className="text-4xl font-bold mb-6 gradient-text">Transações</h2>
-            
+
             <Tabs defaultValue="credito" className="w-full">
               <TabsList className="grid grid-cols-2 lg:grid-cols-6 gap-2 mb-6">
                 <TabsTrigger value="credito">Crédito</TabsTrigger>
@@ -580,7 +595,7 @@ data class PaymentMethod(
                 <TabsTrigger value="pix">Pix</TabsTrigger>
                 <TabsTrigger value="wallet">Wallet</TabsTrigger>
               </TabsList>
-              
+
               <TabsList className="grid grid-cols-2 lg:grid-cols-5 gap-2 mb-6">
                 <TabsTrigger value="frota">Frota</TabsTrigger>
                 <TabsTrigger value="cancelamento">Cancelamento</TabsTrigger>
@@ -593,7 +608,7 @@ data class PaymentMethod(
               <TabsContent value="credito" className="space-y-6">
                 <div className="card p-8 shadow-card">
                   <h3 className="text-2xl font-bold mb-4">Crédito</h3>
-                  
+
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                     <p className="text-sm text-muted-foreground">
@@ -613,7 +628,7 @@ data class PaymentMethod(
                   <p className="text-muted-foreground mb-4">
                     O objeto CreditParameters, utilizado em transações de crédito.
                   </p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -654,8 +669,8 @@ data class PaymentMethod(
                   <p className="text-muted-foreground mb-4">
                     Para o creditType é utilizado um enum para identificação da Modalidade de Crédito.
                   </p>
-                  
-                  <CodeBlock 
+
+                  <CodeBlock
                     language="kotlin"
                     code={`/**
  * Enum representando os tipos de transação de Crédito.
@@ -685,7 +700,7 @@ enum class CreditTransactionType(
 }`}
                     className="mb-4"
                   />
-                  
+
                   <p className="text-muted-foreground mb-6">
                     Independente da modalidade, os resultados da transação serão devolvidos no objeto paymentResult
                   </p>
@@ -694,7 +709,7 @@ enum class CreditTransactionType(
                   <p className="text-muted-foreground mb-4">
                     O objeto PaymentResult, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:
                   </p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -720,12 +735,12 @@ enum class CreditTransactionType(
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <h4 className="text-xl font-bold mb-3">NsuInfo¶</h4>
                   <p className="text-muted-foreground mb-4">
                     O objeto NsuInfo contém informações essenciais da transação que são preenchidos de acordo com o retorno do provedor. Abaixo estão os campos disponíveis.
                   </p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -743,12 +758,12 @@ enum class CreditTransactionType(
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <h4 className="text-xl font-bold mb-3">TransactionInfo¶</h4>
                   <p className="text-muted-foreground mb-4">
                     O objeto TransactionInfo contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:
                   </p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -773,9 +788,9 @@ enum class CreditTransactionType(
                   </div>
 
                   <h4 className="text-xl font-bold mb-3">Exemplos¶</h4>
-                  
+
                   <h5 className="text-lg font-bold mb-3 mt-6">Exemplo de Crédito a vista¶</h5>
-                  
+
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                     <p className="text-sm text-muted-foreground">
@@ -830,7 +845,7 @@ class MainActivity : AppCompatActivity() {
                   />
 
                   <h5 className="text-lg font-bold mb-3 mt-6">Exemplo de Crédito parcelado pelo lojista¶</h5>
-                  
+
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                     <p className="text-sm text-muted-foreground">
@@ -893,14 +908,14 @@ class MainActivity : AppCompatActivity() {
                   <p className="text-muted-foreground mb-4">
                     Para realizar uma Transação de Pré-autorização de crédito, utilize os métodos <strong>preAuthorize</strong>, <strong>capturePreAuthorization</strong> (ou <strong>credit</strong>) e <strong>cancelPreAuthorization</strong> (ou <strong>cancel</strong>) da classe paykit.
                   </p>
-                  
+
                   <p className="text-muted-foreground mb-4">
                     Os parâmetros de entrada da transação de pré-autorização são configurados no objeto <code>CreditParameters</code>
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">CreditParameters¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto CreditParameters, utilizado em transações de crédito.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -934,7 +949,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PendingPreParameters¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PendingPreParameters, utilizado em transações de captura ou cancelamento de pré-autorização.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -996,7 +1011,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">PaymentResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PaymentResult, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1025,7 +1040,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3">NsuInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto NsuInfo contém informações essenciais da transação que são preenchidos de acordo com o retorno do provedor. Abaixo estão os campos disponíveis.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1046,7 +1061,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3">TransactionInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionInfo contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1076,7 +1091,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Detalhamento do CancelResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto CancelResult, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1105,7 +1120,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3">NsuInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto NsuInfo contém informações essenciais da transação que são preenchidos de acordo com o retorno do provedor. Abaixo estão os campos disponíveis.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1126,7 +1141,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3">TransactionInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionInfo contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -1151,9 +1166,9 @@ class MainActivity : AppCompatActivity() {
                   </div>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplos¶</h4>
-                  
+
                   <h5 className="text-lg font-bold mb-3">Exemplo de Pré-autorização com captura da pré-autorização¶</h5>
-                  
+
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                     <p className="text-sm text-muted-foreground">
@@ -1230,7 +1245,7 @@ class MainActivity : AppCompatActivity() {
                   />
 
                   <h5 className="text-lg font-bold mb-3">Exemplo de Pré-autorização com operação de crédito para captura¶</h5>
-                  
+
                   <div className="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <p className="text-sm font-semibold mb-1">⚠️ Atenção</p>
                     <p className="text-sm text-muted-foreground">
@@ -1314,7 +1329,7 @@ class MainActivity : AppCompatActivity() {
                   <p className="text-muted-foreground mb-4">
                     O processo para realizar qualquer transação, tem como premissa que a ativação do SDK foi previamente realizada. Para realizar uma Transação de Débito, utilize o método <code>debit</code> da classe paykit.
                   </p>
-                  
+
                   <p className="text-muted-foreground mb-4">
                     Os parâmetros de entrada da transação são configurados no objeto <code>DebitParameters</code>
                   </p>
@@ -2920,7 +2935,7 @@ builder.addRefuelItem(
 
                   <h4 className="text-xl font-bold mb-3 mt-6">CancelParameter¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto CancelParameter, utilizado em transações de cancelamento.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -2950,7 +2965,7 @@ builder.addRefuelItem(
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
                   <p className="text-muted-foreground mb-4">Para realizar uma Transação de Cancelamento, utilize o exemplo abaixo.</p>
-                  
+
                   <CodeBlock
                     language="kotlin"
                     code={`import android.os.Bundle
@@ -2996,7 +3011,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do CancelResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto CancelResult, retornado no callback da transação, contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3059,7 +3074,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">NsuInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto NsuInfo contém informações essenciais da transação que são preenchidos de acordo com o retorno do provedor. Abaixo estão os campos disponíveis.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3080,7 +3095,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">TransactionInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionInfo contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3118,7 +3133,7 @@ class MainActivity : AppCompatActivity() {
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
-                  
+
                   <CodeBlock
                     language="kotlin"
                     code={`import android.os.Bundle
@@ -3157,7 +3172,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do PrintResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PrintResult, retornado no callback da transação, contém informações essenciais sobre o status da impressão. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3244,7 +3259,7 @@ class MainActivity : AppCompatActivity() {
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
-                  
+
                   <CodeBlock
                     language="kotlin"
                     code={`import android.os.Bundle
@@ -3283,7 +3298,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do PrintResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto PrintResult, retornado no callback da transação, contém informações essenciais sobre o status da impressão. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3370,7 +3385,7 @@ class MainActivity : AppCompatActivity() {
                   </p>
 
                   <h4 className="text-xl font-bold mb-3 mt-6">Exemplo¶</h4>
-                  
+
                   <CodeBlock
                     language="kotlin"
                     code={`import android.os.Bundle
@@ -3394,10 +3409,10 @@ class MainActivity : AppCompatActivity() {
 
         paykit = PaykitFactory().build(Parameters(this.applicationContext, "Busca Transação", PaykitId("PAYKIT_ID")))
 
-        // Utilizar o ID da transação ou o ID externo para localizar 
+        // Utilizar o ID da transação ou o ID externo para localizar
         val transactionParameter = TransactionInfoParameters(
             transactionId = "1", // (transactionId) NSU da Transação
-            // externalId = "123456" // ID externo da transação 
+            // externalId = "123456" // ID externo da transação
         )
 
         paykit.getTransaction(transactionParameter, object : Callback<TransactionQueryResult?> {
@@ -3416,7 +3431,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">Detalhamento do TransactionQueryResult¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionQueryResult, retornado no callback da transação, contém informações da consulta. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3491,7 +3506,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">NsuInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto NsuInfo contém informações essenciais da transação que são preenchidos de acordo com o retorno do provedor. Abaixo estão os campos disponíveis.</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3512,7 +3527,7 @@ class MainActivity : AppCompatActivity() {
 
                   <h4 className="text-xl font-bold mb-3 mt-8">TransactionInfo¶</h4>
                   <p className="text-muted-foreground mb-4 text-sm">O objeto TransactionInfo contém informações essenciais da adquirente. Abaixo estão os principais campos disponíveis:</p>
-                  
+
                   <div className="overflow-x-auto mb-6">
                     <table className="w-full border-collapse text-sm">
                       <thead>
@@ -3543,14 +3558,14 @@ class MainActivity : AppCompatActivity() {
           {/* DeepLink */}
           <section id="deeplink" className="mb-16 scroll-mt-24">
             <h2 className="text-4xl font-bold mb-6 gradient-text">Integração Deeplink SDK Único</h2>
-            
+
             {/* Introdução */}
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-4">Introdução</h3>
               <p className="text-muted-foreground mb-4">
                 O PaykitDeeplink é uma interface que permite a integração e comunicação com o SDK Unico para processamento de pagamentos através de deeplinks. Esta documentação detalha as rotas disponíveis e os parâmetros aceitos para cada método de pagamento.
               </p>
-              
+
               <div className="bg-accent/10 border border-accent/30 p-4 rounded-lg">
                 <h4 className="font-semibold mb-2 text-accent">Rota Base</h4>
                 <p className="text-sm text-muted-foreground mb-2">Para chamar o PaykitDeeplink, a aplicação deve utilizar o seguinte formato de URL:</p>
@@ -3564,7 +3579,7 @@ class MainActivity : AppCompatActivity() {
               <p className="text-muted-foreground mb-4">
                 O parâmetro <code className="text-primary">paymentType</code> determina qual tipo de operação será executada. As operações disponíveis são:
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-3">
                 <div className="p-3 border rounded-lg hover:bg-accent/5 transition-smooth">
                   <code className="text-accent font-semibold">activate</code>
@@ -3636,7 +3651,7 @@ class MainActivity : AppCompatActivity() {
             {/* Parâmetros por Método */}
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Parâmetros por Método de Pagamento</h3>
-              
+
               <Tabs defaultValue="activate" className="w-full">
                 <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 h-auto">
                   <TabsTrigger value="activate">Ativação</TabsTrigger>
@@ -3663,7 +3678,7 @@ class MainActivity : AppCompatActivity() {
                     <h4 className="font-semibold mb-2 text-lg">1. Ativação</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=activate</code>
                     <p className="text-sm text-muted-foreground mb-4 italic">*Executar apenas 1 (uma) vez ou quando o terminal é realocado para outra loja.</p>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3699,7 +3714,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">2. Pagamento com Cartão de Crédito</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=credit</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3751,7 +3766,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">3. Pagamento com Cartão de Débito</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=debit</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3791,7 +3806,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">4. Pagamento com Voucher</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=voucher</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3815,7 +3830,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">5. Pagamento com Cartão de Frota</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=fleet</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3835,7 +3850,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">6. Pagamento via PIX</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=pix</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3855,7 +3870,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">7. Pagamento via Carteira Digital</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=wallet</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3875,7 +3890,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">8. Pagamento via QR Code</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=qrcode</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3895,7 +3910,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">9. Confirmação de Transação Pendente</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=confirm</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3919,7 +3934,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">10. Desfazer Transação Pendente</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=undo</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3943,7 +3958,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">11. Imprimir Último Recibo</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=print_last_receipt</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3959,7 +3974,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">12. Consulta de Transação</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=get_transaction</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -3979,7 +3994,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">13. Cancelar Transação</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=cancel</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -4012,7 +4027,7 @@ class MainActivity : AppCompatActivity() {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">15. Impressão</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=print</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -4020,7 +4035,7 @@ class MainActivity : AppCompatActivity() {
                         <p className="text-sm text-muted-foreground mb-2">Imagem a ser impressa (codificada em base64)</p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-accent/10 border border-accent/30 p-4 rounded-lg mt-4">
                       <h6 className="font-semibold mb-2 text-accent">Observações sobre o parâmetro bitmap:</h6>
                       <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5">
@@ -4031,7 +4046,7 @@ class MainActivity : AppCompatActivity() {
                         <li>Impressora térmica geralmente tem largura de 384 pixels</li>
                       </ul>
                     </div>
-                    
+
                     <div className="mt-4">
                       <h6 className="font-semibold mb-2">Exemplo de codificação Kotlin:</h6>
                       <CodeBlock
@@ -4067,7 +4082,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                   <div className="p-6 border rounded-lg">
                     <h4 className="font-semibold mb-2 text-lg">16. Consulta de Relatórios</h4>
                     <code className="block bg-accent/20 p-3 rounded text-sm mb-4">paykit://payment?paymentType=query_report</code>
-                    
+
                     <h5 className="font-semibold mb-3">Parâmetros:</h5>
                     <div className="space-y-2">
                       <div className="p-3 bg-muted/50 rounded">
@@ -4197,7 +4212,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
               <p className="text-muted-foreground mb-6">
                 O parâmetro <code className="text-primary">orderItems</code> pode ser informado em dois formatos:
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Formato JSON</h4>
@@ -4225,7 +4240,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                     <strong>Importante:</strong> O JSON deve ser codificado para URL.
                   </p>
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Formato Delimitado</h4>
                   <CodeBlock
@@ -4245,7 +4260,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
             {/* Formatos de String Suportados */}
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Formatos de String Suportados</h3>
-              
+
               <div className="space-y-6">
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">CPF e CNPJ</h4>
@@ -4263,14 +4278,14 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Host</h4>
                   <p className="text-sm text-muted-foreground mb-3">Aceita endereços IP ou URLs.</p>
                   <code className="block bg-card p-2 rounded text-xs">IP: 192.168.0.1</code>
                   <code className="block bg-card p-2 rounded text-xs mt-1">URL: https://api.pagamento.com.br</code>
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Parâmetros JSON</h4>
                   <p className="text-sm text-muted-foreground mb-3">Devem ser codificados adequadamente para URLs.</p>
@@ -4281,13 +4296,13 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
                     <code className="block bg-card p-2 rounded text-xs">{`providerParams=%7B%22terminal_id%22%3A%2212345%22%2C%22merchant_id%22%3A%2267890%22%7D`}</code>
                   </div>
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Data e Hora</h4>
                   <p className="text-sm text-muted-foreground mb-3">O parâmetro dateTimeOfSale deve ser informado como timestamp em milissegundos.</p>
                   <code className="block bg-card p-2 rounded text-xs">dateTimeOfSale=1717401600000</code>
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">Valores Booleanos</h4>
                   <p className="text-sm text-muted-foreground mb-3">Aceitam valores "true" ou "false" como strings.</p>
@@ -4303,7 +4318,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
               <p className="text-muted-foreground mb-4">
                 Após a operação ser concluída, o PaykitDeeplink retorna um resultado que pode ser processado pela aplicação que originou a chamada. Os resultados são fornecidos como extras em um Intent, onde a chave é <code className="text-primary">result</code>.
               </p>
-              
+
               <h4 className="font-semibold mb-3">Dependendo do tipo de operação, o resultado pode conter:</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <code className="text-accent">PaymentResult</code> - Para operações de pagamento (crédito, débito, voucher, etc.)</li>
@@ -4319,7 +4334,7 @@ fun resizeBitmap(originalBitmap: Bitmap, maxWidthInPixels: Int = 384): Bitmap {
             {/* Exemplos de Implementação */}
             <div className="card p-8 shadow-card mb-6">
               <h3 className="text-2xl font-bold mb-6">Exemplos de Implementação</h3>
-              
+
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">1. Implementação com URI</h4>
@@ -4339,7 +4354,7 @@ val intent = Intent(Intent.ACTION_VIEW, uri)
 startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
                   />
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">2. Implementação com Intent</h4>
                   <p className="text-sm text-muted-foreground mb-3">Alternativamente, você pode implementar usando diretamente o Intent com extras:</p>
@@ -4356,7 +4371,7 @@ intent.putExtra("autoPrintReceipt", "true")
 startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
                   />
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold mb-3 text-accent">Processando o resultado:</h4>
                   <CodeBlock
@@ -4384,7 +4399,7 @@ startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
               <p className="text-muted-foreground mb-6">
                 O SDK disponibiliza classes auxiliares na biblioteca <code className="text-primary">com.linx.paykit.common.deeplink.parameters</code> no pacote <code className="text-primary">SDKPayServices.common</code> para facilitar a integração com o PaykitDeeplink.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">DeeplinkParameter</h4>
@@ -4404,7 +4419,7 @@ startActivityForResult(intent, REQUEST_CODE_PAYMENT)`}
 intent.putExtra(DeeplinkParameter.AMOUNT.key, "10.50")`}
                   />
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">DeeplinkExtensions</h4>
                   <p className="text-sm text-muted-foreground mb-3">Fornece métodos de extensão para facilitar a extração e processamento de parâmetros:</p>
@@ -4417,7 +4432,7 @@ val providerParams = intent.extractProviderParams()
 val orderItems = intent.extractOrderItems()`}
                   />
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">TransactionParameterBuilder</h4>
                   <p className="text-sm text-muted-foreground mb-3">Permite criar facilmente diferentes tipos de parâmetros:</p>
@@ -4435,7 +4450,7 @@ val cancelParams = builder.buildCancelParameter()
 val params = builder.build<CreditParameters>()`}
                   />
                 </div>
-                
+
                 <div className="p-4 border rounded-lg">
                   <h4 className="font-semibold mb-3 text-accent">PaymentTypeOption e TransactionTypeOption</h4>
                   <p className="text-sm text-muted-foreground mb-3">Oferecem abstrações seguras para trabalhar com tipos:</p>
@@ -4531,7 +4546,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
           {/* Terminais homologados */}
           <section id="terminais-homologados" className="mb-16 scroll-mt-24">
             <h2 className="text-4xl font-bold mb-6 gradient-text">Terminais homologados</h2>
-            
+
             <Tabs defaultValue="terminals" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
                 <TabsTrigger value="terminals">Lista de Terminais</TabsTrigger>
@@ -5146,7 +5161,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                   <p className="text-muted-foreground mb-4">
                     Os terminais compatíveis possuem diferentes versões do sistema operacional, conforme definido pelo fabricante:
                   </p>
-                  
+
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
@@ -5285,7 +5300,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <div className="mt-4 p-4 bg-accent/30 rounded-lg">
                     <p className="text-sm text-muted-foreground">
                       "✔️" indica que o terminal é compatível com a adquirente através do SDK Único.
@@ -5302,7 +5317,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                   <p className="text-muted-foreground mb-4">
                     Para dar suporte a integradores com versões mais antigas do Gradle e Android, possuímos 2 versões do SDK Único. Uma versão retrocompatível, e outra com bibliotecas atualizadas.
                   </p>
-                  
+
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
@@ -5326,7 +5341,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <div className="mt-4 p-4 bg-accent/30 rounded-lg">
                     <p className="text-sm text-muted-foreground">
                       Qualquer dependência que o SDK Único utilize internamente, vai respeitar sua determinada versão de <code>gradle</code> e <code>kotlin</code> e todo <code>bytecode</code> está sendo transpilado para <strong>Java 8</strong>, assim conseguimos atender uma maior quantidade de integradores.
@@ -5337,7 +5352,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                 {/* Versões das bibliotecas das Adquirentes */}
                 <div className="card p-8 shadow-card">
                   <h3 className="text-2xl font-bold mb-4">Versões das bibliotecas das Adquirentes do SDK Único</h3>
-                  
+
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
@@ -5406,7 +5421,7 @@ val transactionTypeOption = TransactionTypeOption.fromString("at_sight")`}
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <div className="mt-4 space-y-2">
                     <div className="p-3 bg-accent/30 rounded">
                       <p className="text-sm text-muted-foreground">
